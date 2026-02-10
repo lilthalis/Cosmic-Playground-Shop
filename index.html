@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSMIC PLAYGROUND | OFFICIAL EXPERIENCE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Cosmic Background */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 100px 150px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 300px, #eee, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50% 50%, #fff, rgba(0,0,0,0));
+            background-size: 400px 400px;
+            opacity: 0.4;
+            animation: moveStars 120s linear infinite;
+        }
+
+        @keyframes moveStars {
+            from { background-position: 0 0; }
+            to { background-position: 2000px 2000px; }
+        }
+
+        /* Glitch Effect Class */
+        .glitch-text:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #ff4500;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            border-color: #ff4500;
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Sold Out Overlay */
+        .sold-out::after {
+            content: 'SOLD OUT';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            border: 4px solid #ff4500;
+            color: #ff4500;
+            font-size: 2rem;
+            font-weight: 900;
+            padding: 10px 20px;
+            z-index: 10;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        .sold-out img, .sold-out .placeholder-img {
+            opacity: 0.3;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ff4500;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar selection:bg-red-600 selection:text-white">
+
+    <div class="cosmic-bg">
+        <div class="stars"></div>
+    </div>
+
+    <!-- Top Marquee Warning -->
+    <div class="bg-red-600 text-black text-xs font-black uppercase tracking-widest py-1 marquee-container border-b border-red-800 z-50 relative">
+        <div class="marquee-content">
+            WARNING: GRAVITY SYSTEMS UNSTABLE /// ENTERING SECTOR 7G /// NEW MERCH DROP LIVE /// THE RIDE NEVER ENDS /// CAUTION: DO NOT FEED THE ALIENS /// WARNING: GRAVITY SYSTEMS UNSTABLE /// ENTERING SECTOR 7G /// NEW MERCH DROP LIVE /// THE RIDE NEVER ENDS /// CAUTION: DO NOT FEED THE ALIENS ///
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full z-40 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 glitch-text cursor-pointer">
+                <!-- Saturn Icon SVG -->
+                <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none">
+                    <rect x="47" y="50" width="6" height="30" rx="3" fill="white"/>
+                    <rect x="35" y="70" width="30" height="6" rx="3" fill="white"/>
+                    <circle cx="50" cy="30" r="12" fill="#FF4500"/>
+                    <ellipse cx="50" cy="30" rx="22" ry="4" transform="rotate(15 50 30)" stroke="white" stroke-width="2"/>
+                </svg>
+                <span class="font-black tracking-tighter text-xl">CPG</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#visuals" class="nav-link">Visuals</a>
+                <a href="#music" class="nav-link">Music</a>
+                <a href="#tour" class="nav-link text-red-500">Tour</a>
+            </div>
+
+            <div class="flex space-x-4 items-center">
+                <button class="text-xs font-bold uppercase tracking-widest hover:text-red-500 transition-colors">Cart (0)</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-4 pt-10 pb-10">
+        <div class="absolute inset-0 z-[-1] bg-[url('https://placehold.co/1920x1080/000/fff?text=')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        
+        <h1 class="text-7xl md:text-9xl font-black italic tracking-tighter mb-4 glitch-text" style="text-shadow: 0 0 20px rgba(255,0,0,0.5);">
+            COSMIC<br><span class="text-red-600">PLAYGROUND</span>
+        </h1>
+        <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-400 mb-8 max-w-lg">Welcome to the park that never existed. <br>Secure your ticket to the void.</p>
+        
+        <div class="flex flex-col md:flex-row gap-6 mb-12 w-full max-w-md md:max-w-none justify-center">
+            <a href="#shop" class="px-10 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-red-600 hover:text-white hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                ENTER THE VOID
+            </a>
+            <a href="#music" class="px-10 py-4 border border-white text-white font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all duration-300">
+                STREAM ALBUM
+            </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-8 text-[10px] md:text-xs font-bold uppercase tracking-widest border-t border-white/10 pt-8 w-full max-w-lg text-center animate-pulse">
+            <div>
+                <span class="block text-red-500 mb-1">Status</span>
+                <span class="text-white">System Critical</span>
+            </div>
+            <div>
+                <span class="block text-red-500 mb-1">Location</span>
+                <span class="text-white">Sector 7G</span>
+            </div>
+            <div>
+                <span class="block text-red-500 mb-1">Capacity</span>
+                <span class="text-white">Overload</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Visuals / Lookbook Section (New) -->
+    <section id="visuals" class="border-y border-white/10 bg-black/50 overflow-hidden">
+        <div class="flex overflow-x-auto no-scrollbar">
+            <!-- Mock Visuals -->
+            <div class="min-w-[80vw] md:min-w-[40vw] h-[50vh] relative group cursor-pointer border-r border-white/10">
+                <img src="https://placehold.co/800x1200/111/333?text=The+Rollercoaster" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500">
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-3xl font-black italic uppercase tracking-tighter">The Drop</h3>
+                    <p class="text-xs tracking-widest uppercase text-red-500">Concept Art 001</p>
+                </div>
+            </div>
+            <div class="min-w-[80vw] md:min-w-[40vw] h-[50vh] relative group cursor-pointer border-r border-white/10">
+                <img src="https://placehold.co/800x1200/0f0f0f/444?text=Neon+Sky" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500">
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-3xl font-black italic uppercase tracking-tighter">Neon Sky</h3>
+                    <p class="text-xs tracking-widest uppercase text-red-500">Concept Art 002</p>
+                </div>
+            </div>
+             <div class="min-w-[80vw] md:min-w-[40vw] h-[50vh] relative group cursor-pointer">
+                <img src="https://placehold.co/800x1200/1a1a1a/555?text=Lost+Astronaut" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500">
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-3xl font-black italic uppercase tracking-tighter">Lost Soul</h3>
+                    <p class="text-xs tracking-widest uppercase text-red-500">Concept Art 003</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 space-y-4">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">Season 01</h2>
+                <div class="h-1 w-20 bg-red-600 mt-2"></div>
+            </div>
+            <p class="text-gray-500 text-sm tracking-widest font-bold uppercase text-right">Limited Edition Streetwear<br>Ships Worldwide</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card p-6 group">
+                <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center overflow-hidden placeholder-img">
+                    <span class="text-zinc-700 font-bold uppercase tracking-widest group-hover:scale-110 transition duration-500">Hoodie Image</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wider mb-1">Saturn Head Hoodie</h3>
+                        <p class="text-xs text-gray-400 mb-2">Heavyweight Cotton</p>
+                    </div>
+                    <p class="text-red-500 font-bold">$85.00</p>
+                </div>
+                <button class="w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
+            </div>
+
+            <!-- Product 2 (SOLD OUT) -->
+            <div class="product-card p-6 sold-out group">
+                <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center overflow-hidden placeholder-img">
+                    <span class="text-zinc-700 font-bold uppercase tracking-widest">Tee Image</span>
+                </div>
+                <div class="flex justify-between items-start opacity-50">
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wider mb-1">Amusement Park Tee</h3>
+                        <p class="text-xs text-gray-400 mb-2">Vintage Wash</p>
+                    </div>
+                    <p class="text-red-500 font-bold">$45.00</p>
+                </div>
+                <button class="w-full py-3 mt-4 border border-white/10 text-xs font-bold uppercase tracking-widest text-gray-500 cursor-not-allowed" disabled>Sold Out</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card p-6 group">
+                <div class="aspect-square bg-zinc-900 mb-6 flex items-center justify-center overflow-hidden placeholder-img">
+                    <span class="text-zinc-700 font-bold uppercase tracking-widest group-hover:scale-110 transition duration-500">Beanie Image</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wider mb-1">Cosmic Beanie</h3>
+                        <p class="text-xs text-gray-400 mb-2">Embroidered Logo</p>
+                    </div>
+                    <p class="text-red-500 font-bold">$30.00</p>
+                </div>
+                <button class="w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Dates Section (New) -->
+    <section id="tour" class="bg-zinc-900/50 py-24 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-white">
+                THE VOID TOUR
+            </h2>
+            
+            <div class="space-y-2">
+                <!-- Date Item -->
+                <div class="flex flex-col md:flex-row justify-between items-center py-6 border-b border-white/10 hover:bg-white/5 transition px-4 group cursor-pointer">
+                    <div class="text-center md:text-left mb-2 md:mb-0">
+                        <span class="block text-2xl font-black uppercase italic group-hover:text-red-500 transition">JUL 13</span>
+                        <span class="text-xs text-gray-500 tracking-widest uppercase">Opening Night</span>
+                    </div>
+                    <div class="text-center mb-2 md:mb-0">
+                        <span class="block text-xl font-bold uppercase tracking-tight">New York City</span>
+                        <span class="text-xs text-gray-400 uppercase">Madison Square Garden</span>
+                    </div>
+                    <button class="px-6 py-2 bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition">Tickets</button>
+                </div>
+
+                 <!-- Date Item -->
+                 <div class="flex flex-col md:flex-row justify-between items-center py-6 border-b border-white/10 hover:bg-white/5 transition px-4 group cursor-pointer">
+                    <div class="text-center md:text-left mb-2 md:mb-0">
+                        <span class="block text-2xl font-black uppercase italic group-hover:text-red-500 transition">JUL 20</span>
+                        <span class="text-xs text-gray-500 tracking-widest uppercase">Sold Out</span>
+                    </div>
+                    <div class="text-center mb-2 md:mb-0">
+                        <span class="block text-xl font-bold uppercase tracking-tight">Houston</span>
+                        <span class="text-xs text-gray-400 uppercase">Toyota Center</span>
+                    </div>
+                    <button class="px-6 py-2 border border-white/20 text-gray-500 text-xs font-black uppercase tracking-widest cursor-not-allowed">Sold Out</button>
+                </div>
+
+                 <!-- Date Item -->
+                 <div class="flex flex-col md:flex-row justify-between items-center py-6 border-b border-white/10 hover:bg-white/5 transition px-4 group cursor-pointer">
+                    <div class="text-center md:text-left mb-2 md:mb-0">
+                        <span class="block text-2xl font-black uppercase italic group-hover:text-red-500 transition">AUG 05</span>
+                        <span class="text-xs text-gray-500 tracking-widest uppercase">International</span>
+                    </div>
+                    <div class="text-center mb-2 md:mb-0">
+                        <span class="block text-xl font-bold uppercase tracking-tight">Tokyo</span>
+                        <span class="text-xs text-gray-400 uppercase">Tokyo Dome</span>
+                    </div>
+                    <button class="px-6 py-2 bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition">Tickets</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto bg-gradient-to-r from-red-900/20 to-purple-900/20 border border-white/10 p-8 md:p-16 rounded-3xl relative overflow-hidden">
+             <!-- Background Blur Element -->
+             <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+                <div class="w-full md:w-1/2">
+                    <div class="aspect-square bg-black shadow-2xl border border-white/10 flex items-center justify-center group overflow-hidden">
+                         <div class="text-center transform group-hover:scale-110 transition duration-700">
+                             <h2 class="text-5xl font-black text-white italic tracking-tighter">COSMIC<br>PLAYGROUND</h2>
+                             <p class="text-xs text-gray-400 uppercase tracking-[0.5em] mt-2">Explicit Content</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 text-left">
+                    <h2 class="text-5xl font-black uppercase italic tracking-tighter mb-6">The Album</h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed font-light">
+                        A journey through sound frequencies unknown to man. 14 tracks of pure interstellar chaos and beauty. Features appearances from the void itself.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button class="flex items-center justify-center space-x-3 p-4 bg-[#1DB954] hover:bg-[#1ed760] text-black transition rounded-sm font-bold uppercase tracking-wider text-sm">
+                            <span>Listen on Spotify</span>
+                        </button>
+                        <button class="flex items-center justify-center space-x-3 p-4 bg-[#FA243C] hover:bg-[#ff364e] text-white transition rounded-sm font-bold uppercase tracking-wider text-sm">
+                            <span>Apple Music</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / Citizen Registration (New) -->
+    <section class="py-24 border-t border-white/10 text-center">
+        <div class="max-w-xl mx-auto px-6">
+            <h3 class="text-3xl font-black uppercase italic tracking-tighter mb-4">Join the Waitlist</h3>
+            <p class="text-gray-400 text-sm mb-8">Be the first to know when the next sector opens. Exclusive access to drops and tour tickets.</p>
+            <form class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="ENTER YOUR EMAIL" class="flex-1 bg-transparent border border-white/30 p-4 text-white text-sm tracking-widest placeholder-gray-600 focus:border-red-500 outline-none uppercase font-bold">
+                <button type="submit" class="bg-white text-black px-8 py-4 font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-16 px-6 bg-black text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+            <div>
+                <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
+                    <span class="font-black tracking-tighter text-2xl">CPG</span>
+                </div>
+                <p class="text-gray-600 text-xs uppercase tracking-widest max-w-xs mx-auto md:mx-0">
+                    &copy; 2030 Cosmic PlayGround.<br>
+                    All rights reserved in this dimension.
+                </p>
+            </div>
+            
+            <div class="flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <a href="#" class="hover:text-white transition">Terms</a>
+                <a href="#" class="hover:text-white transition">Privacy</a>
+                <a href="#" class="hover:text-white transition">Returns</a>
+            </div>
+
+            <div class="flex space-x-6 text-xl text-gray-500">
+                <a href="#" class="hover:text-red-500 transition">📸</a>
+                <a href="#" class="hover:text-red-500 transition">🎵</a>
+                <a href="#" class="hover:text-red-500 transition">🐦</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
