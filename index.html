@@ -184,6 +184,17 @@
             display: none;
         }
 
+
+        .countdown-box {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .review-card {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
     </style>
 </head>
 <body class="custom-scrollbar selection:bg-red-600 selection:text-white">
@@ -264,6 +275,24 @@
             </div>
         </div>
     </header>
+
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+        <div class="countdown-box p-6 md:p-8 rounded-xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <p class="text-red-500 text-xs uppercase tracking-[0.25em] font-bold mb-2">Next Limited Drop</p>
+                    <h2 class="text-2xl md:text-4xl font-black italic tracking-tight">Drop 02 launches soon</h2>
+                    <p class="text-gray-400 text-sm mt-2">Enable alerts and stay ready before stock disappears.</p>
+                </div>
+                <div id="drop-countdown" class="grid grid-cols-4 gap-3 w-full md:w-auto text-center">
+                    <div class="countdown-box px-3 py-4 rounded-lg"><p id="days" class="text-2xl font-black">00</p><p class="text-[10px] uppercase tracking-widest text-gray-400">Days</p></div>
+                    <div class="countdown-box px-3 py-4 rounded-lg"><p id="hours" class="text-2xl font-black">00</p><p class="text-[10px] uppercase tracking-widest text-gray-400">Hours</p></div>
+                    <div class="countdown-box px-3 py-4 rounded-lg"><p id="minutes" class="text-2xl font-black">00</p><p class="text-[10px] uppercase tracking-widest text-gray-400">Min</p></div>
+                    <div class="countdown-box px-3 py-4 rounded-lg"><p id="seconds" class="text-2xl font-black">00</p><p class="text-[10px] uppercase tracking-widest text-gray-400">Sec</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Visuals / Lookbook Section (New) -->
     <section id="visuals" class="border-y border-white/10 bg-black/50 overflow-hidden">
@@ -367,12 +396,12 @@
             </div>
             <div class="feature-chip p-6">
                 <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Payments</p>
-                <h3 class="font-black uppercase tracking-wide mb-2">Checkout Seguro</h3>
+                <h3 class="font-black uppercase tracking-wide mb-2">Secure Checkout</h3>
                 <p class="text-sm text-gray-400">Support for card, instant transfer, and digital wallets.</p>
             </div>
             <div class="feature-chip p-6">
-                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Exclusividade</p>
-                <h3 class="font-black uppercase tracking-wide mb-2">Drop Limitado</h3>
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Exclusivity</p>
+                <h3 class="font-black uppercase tracking-wide mb-2">Limited Drop</h3>
                 <p class="text-sm text-gray-400">Numbered pieces with uncertain restock.</p>
             </div>
         </div>
@@ -491,6 +520,49 @@
         </div>
     </section>
 
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <h3 class="text-3xl font-black uppercase italic tracking-tighter mb-8 text-center">Quick Size Guide</h3>
+        <div class="overflow-x-auto border border-white/10 rounded-xl">
+            <table class="min-w-full text-left text-sm">
+                <thead class="bg-white/5 uppercase tracking-widest text-xs text-gray-400">
+                    <tr>
+                        <th class="px-4 py-3">Size</th>
+                        <th class="px-4 py-3">Chest (in)</th>
+                        <th class="px-4 py-3">Length (in)</th>
+                        <th class="px-4 py-3">Fit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t border-white/10"><td class="px-4 py-3">S</td><td class="px-4 py-3">40</td><td class="px-4 py-3">27</td><td class="px-4 py-3 text-gray-400">Regular / Slightly Boxy</td></tr>
+                    <tr class="border-t border-white/10"><td class="px-4 py-3">M</td><td class="px-4 py-3">44</td><td class="px-4 py-3">28</td><td class="px-4 py-3 text-gray-400">Standard Oversized</td></tr>
+                    <tr class="border-t border-white/10"><td class="px-4 py-3">L</td><td class="px-4 py-3">48</td><td class="px-4 py-3">29</td><td class="px-4 py-3 text-gray-400">Loose Street Fit</td></tr>
+                    <tr class="border-t border-white/10"><td class="px-4 py-3">XL</td><td class="px-4 py-3">52</td><td class="px-4 py-3">30</td><td class="px-4 py-3 text-gray-400">Extra Oversized</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <h3 class="text-3xl font-black uppercase italic tracking-tighter mb-8 text-center">Community Reviews</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <article class="review-card p-5 rounded-xl">
+                <p class="text-red-500 mb-3">★★★★★</p>
+                <p class="text-sm text-gray-300">"The hoodie quality is heavy and premium. Shipping was fast and packaging looked insane."</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mt-4">— Alex, NY</p>
+            </article>
+            <article class="review-card p-5 rounded-xl">
+                <p class="text-red-500 mb-3">★★★★★</p>
+                <p class="text-sm text-gray-300">"Design language feels authentic and unique. Definitely one of my favorite festival-inspired drops."</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mt-4">— Maya, LA</p>
+            </article>
+            <article class="review-card p-5 rounded-xl">
+                <p class="text-red-500 mb-3">★★★★☆</p>
+                <p class="text-sm text-gray-300">"Beanie fit is perfect. Would love more colorways in the next release."</p>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mt-4">— Jordan, TX</p>
+            </article>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-16 px-6 bg-black text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
@@ -556,18 +628,65 @@
         const cookiePrefText = document.getElementById('cookie-pref-text');
         const cookieConsentKey = 'cpg-cookie-consent';
 
-        if (localStorage.getItem(cookieConsentKey) === 'accepted') {
+        const canUseStorage = (() => {
+            try {
+                const key = '__storage_test__';
+                localStorage.setItem(key, '1');
+                localStorage.removeItem(key);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        })();
+
+        if (canUseStorage && localStorage.getItem(cookieConsentKey) === 'accepted') {
             cookieBanner.classList.add('cookie-hidden');
         }
 
         cookieAccept.addEventListener('click', () => {
-            localStorage.setItem(cookieConsentKey, 'accepted');
+            if (canUseStorage) {
+                localStorage.setItem(cookieConsentKey, 'accepted');
+            }
             cookieBanner.classList.add('cookie-hidden');
         });
 
         cookiePreferences.addEventListener('click', () => {
             cookiePrefText.classList.toggle('cookie-hidden');
         });
+
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 11);
+        const ids = {
+            days: document.getElementById('days'),
+            hours: document.getElementById('hours'),
+            minutes: document.getElementById('minutes'),
+            seconds: document.getElementById('seconds')
+        };
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+
+            if (distance <= 0) {
+                Object.values(ids).forEach((node) => {
+                    node.textContent = '00';
+                });
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            ids.days.textContent = String(days).padStart(2, '0');
+            ids.hours.textContent = String(hours).padStart(2, '0');
+            ids.minutes.textContent = String(minutes).padStart(2, '0');
+            ids.seconds.textContent = String(seconds).padStart(2, '0');
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 
 </body>
