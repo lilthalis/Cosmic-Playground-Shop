@@ -5,6 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cosmic Playground Shop: loja oficial de streetwear inspirada no universo Astroworld. Drops limitados, envio mundial e peças exclusivas.">
     <title>COSMIC PLAYGROUND | OFFICIAL EXPERIENCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -139,6 +140,24 @@
             background: #333;
             border-radius: 10px;
         }
+
+        .feature-chip {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .floating-contact {
+            position: fixed;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            z-index: 60;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .faq-item[open] {
+            border-color: rgba(255, 69, 0, 0.5);
+            background: rgba(255, 255, 255, 0.02);
+        }
     </style>
 </head>
 <body class="custom-scrollbar selection:bg-red-600 selection:text-white">
@@ -152,6 +171,10 @@
         <div class="marquee-content">
             WARNING: GRAVITY SYSTEMS UNSTABLE /// ENTERING SECTOR 7G /// NEW MERCH DROP LIVE /// THE RIDE NEVER ENDS /// CAUTION: DO NOT FEED THE ALIENS /// WARNING: GRAVITY SYSTEMS UNSTABLE /// ENTERING SECTOR 7G /// NEW MERCH DROP LIVE /// THE RIDE NEVER ENDS /// CAUTION: DO NOT FEED THE ALIENS ///
         </div>
+    </div>
+
+    <div class="bg-black text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-2 text-center border-b border-white/10">
+        Free shipping acima de $120 • Pagamento em até 3x • Drop 02 abre em 11 dias
     </div>
 
     <!-- Navigation -->
@@ -176,7 +199,7 @@
             </div>
 
             <div class="flex space-x-4 items-center">
-                <button class="text-xs font-bold uppercase tracking-widest hover:text-red-500 transition-colors">Cart (0)</button>
+                <button id="cart-button" class="text-xs font-bold uppercase tracking-widest hover:text-red-500 transition-colors">Cart (0)</button>
             </div>
         </div>
     </nav>
@@ -253,6 +276,13 @@
             <p class="text-gray-500 text-sm tracking-widest font-bold uppercase text-right">Limited Edition Streetwear<br>Ships Worldwide</p>
         </div>
 
+        <div class="flex flex-wrap gap-3 mb-8 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+            <span class="feature-chip px-4 py-2">Best Sellers</span>
+            <span class="feature-chip px-4 py-2">New Drop</span>
+            <span class="feature-chip px-4 py-2">Oversized Fit</span>
+            <span class="feature-chip px-4 py-2">Pronta Entrega</span>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Product 1 -->
             <div class="product-card p-6 group">
@@ -266,7 +296,7 @@
                     </div>
                     <p class="text-red-500 font-bold">$85.00</p>
                 </div>
-                <button class="w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
+                <button class="add-to-cart w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
             </div>
 
             <!-- Product 2 (SOLD OUT) -->
@@ -296,7 +326,27 @@
                     </div>
                     <p class="text-red-500 font-bold">$30.00</p>
                 </div>
-                <button class="w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
+                <button class="add-to-cart w-full py-3 mt-4 border border-white/20 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Add to Bag</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div class="feature-chip p-6">
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Entrega</p>
+                <h3 class="font-black uppercase tracking-wide mb-2">Envio Rápido</h3>
+                <p class="text-sm text-gray-400">Postagem em até 24h para peças em estoque.</p>
+            </div>
+            <div class="feature-chip p-6">
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Pagamento</p>
+                <h3 class="font-black uppercase tracking-wide mb-2">Checkout Seguro</h3>
+                <p class="text-sm text-gray-400">Suporte para cartão, PIX e carteira digital.</p>
+            </div>
+            <div class="feature-chip p-6">
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Exclusividade</p>
+                <h3 class="font-black uppercase tracking-wide mb-2">Drop Limitado</h3>
+                <p class="text-sm text-gray-400">Peças numeradas com reposição incerta.</p>
             </div>
         </div>
     </section>
@@ -396,6 +446,24 @@
         </div>
     </section>
 
+    <section class="max-w-4xl mx-auto px-6 pb-24">
+        <h3 class="text-3xl font-black uppercase italic tracking-tighter mb-8 text-center">FAQ</h3>
+        <div class="space-y-4">
+            <details class="faq-item border border-white/10 p-4 rounded-lg">
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Qual o prazo de entrega?</summary>
+                <p class="text-sm text-gray-400 mt-3">Brasil: 3 a 10 dias úteis. Internacional: 7 a 20 dias úteis dependendo da alfândega.</p>
+            </details>
+            <details class="faq-item border border-white/10 p-4 rounded-lg">
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Tem troca de tamanho?</summary>
+                <p class="text-sm text-gray-400 mt-3">Sim. Você pode solicitar troca em até 7 dias após o recebimento com etiqueta preservada.</p>
+            </details>
+            <details class="faq-item border border-white/10 p-4 rounded-lg">
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Como saber meu fit ideal?</summary>
+                <p class="text-sm text-gray-400 mt-3">Recomendamos incluir uma tabela de medidas por peça. Como regra geral, modelagem oversized veste 1 número acima.</p>
+            </details>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-16 px-6 bg-black text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
@@ -422,6 +490,23 @@
             </div>
         </div>
     </footer>
+
+    <a href="#" class="floating-contact bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-xs px-5 py-3 rounded-full transition">
+        WhatsApp Support
+    </a>
+
+    <script>
+        const cartButton = document.getElementById('cart-button');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        let cartCount = 0;
+
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                cartCount += 1;
+                cartButton.textContent = `Cart (${cartCount})`;
+            });
+        });
+    </script>
 
 </body>
 </html>
