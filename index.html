@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official-inspired Astroworld festival streetwear experience: limited drops, worldwide shipping, and exclusive cosmic pieces.">
-    <title>COSMIC FEST | Official Cosmic Shop Experience</title>
+    <title>ASTROWORLD FEST | Official Cosmic Shop Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -195,6 +195,16 @@
             background: rgba(255, 255, 255, 0.02);
         }
 
+        .portal-link {
+            color: rgba(255, 255, 255, 0.45);
+            transition: color 0.25s ease, transform 0.25s ease;
+        }
+
+        .portal-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateX(4px);
+        }
+
     </style>
 </head>
 <body class="custom-scrollbar selection:bg-red-600 selection:text-white">
@@ -246,7 +256,7 @@
         <div class="absolute inset-0 z-[-1] bg-[url('https://placehold.co/1920x1080/000/fff?text=')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         
         <h1 class="text-7xl md:text-9xl font-black italic tracking-tighter mb-4 glitch-text" style="text-shadow: 0 0 20px rgba(255,0,0,0.5);">
-            COSMIC<br><span class="text-red-600">FEST SHOP</span>
+            ASTROWORLD<br><span class="text-red-600">FEST SHOP</span>
         </h1>
         <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-400 mb-8 max-w-lg">The official-inspired merchandise hub for Astroworld energy. <br>Secure your piece before the next drop vanishes.</p>
         <p class="text-[11px] md:text-xs tracking-[0.25em] uppercase text-gray-500 mb-8">Official style reference: astroworldfest.com</p>
@@ -563,6 +573,20 @@
         </div>
     </section>
 
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="border border-white/10 bg-white/[0.02] rounded-2xl p-8 md:p-12">
+            <p class="text-red-500 text-xs font-bold uppercase tracking-[0.28em] mb-3">Cosmic Portal</p>
+            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white/80 mb-8">Music<br>Videos<br>Merch<br>Tour<br>Email</h3>
+            <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
+                <a href="#music" class="portal-link">Music</a>
+                <a href="#visuals" class="portal-link">Videos</a>
+                <a href="#shop" class="portal-link">Merch</a>
+                <a href="#tour" class="portal-link">Tour</a>
+                <a href="mailto:contact@cosmicplayground.shop" class="portal-link">Email</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-16 px-6 bg-black text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
@@ -577,20 +601,21 @@
             </div>
             
             <div class="flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-500">
-                <a href="#" class="hover:text-white transition">Terms</a>
-                <a href="#" class="hover:text-white transition">Privacy</a>
-                <a href="#" class="hover:text-white transition">Returns</a>
+                <a href="terms.html" class="hover:text-white transition">Terms</a>
+                <a href="privacy.html" class="hover:text-white transition">Privacy</a>
+                <a href="returns.html" class="hover:text-white transition">Returns</a>
             </div>
 
             <div class="flex space-x-6 text-xl text-gray-500">
-                <a href="#" class="hover:text-red-500 transition">📸</a>
-                <a href="#" class="hover:text-red-500 transition">🎵</a>
-                <a href="#" class="hover:text-red-500 transition">🐦</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-red-500 transition">📸</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="hover:text-red-500 transition">▶️</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" class="hover:text-red-500 transition">✕</a>
+                <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="hover:text-red-500 transition">🟢</a>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="floating-contact bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-xs px-5 py-3 rounded-full transition">
+    <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="floating-contact bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-xs px-5 py-3 rounded-full transition">
         WhatsApp Help
     </a>
 
