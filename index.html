@@ -5,8 +5,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cosmic Playground Shop: loja oficial de streetwear inspirada no universo Astroworld. Drops limitados, envio mundial e peças exclusivas.">
-    <title>COSMIC PLAYGROUND | OFFICIAL EXPERIENCE</title>
+    <meta name="description" content="Official-inspired Astroworld festival streetwear experience: limited drops, worldwide shipping, and exclusive cosmic pieces.">
+    <title>ASTROWORLD FEST | Official Cosmic Shop Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -158,6 +158,32 @@
             border-color: rgba(255, 69, 0, 0.5);
             background: rgba(255, 255, 255, 0.02);
         }
+
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: min(560px, calc(100% - 2rem));
+            z-index: 80;
+            background: #070707;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .cookie-btn-primary {
+            background: linear-gradient(120deg, #d946ef, #ec4899);
+        }
+
+        .cookie-btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cookie-hidden {
+            display: none;
+        }
+
     </style>
 </head>
 <body class="custom-scrollbar selection:bg-red-600 selection:text-white">
@@ -174,7 +200,7 @@
     </div>
 
     <div class="bg-black text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-2 text-center border-b border-white/10">
-        Free shipping acima de $120 • Pagamento em até 3x • Drop 02 abre em 11 dias
+        Free shipping over $120 • Secure checkout in up to 3 installments • Drop 02 opens in 11 days
     </div>
 
     <!-- Navigation -->
@@ -188,7 +214,7 @@
                     <circle cx="50" cy="30" r="12" fill="#FF4500"/>
                     <ellipse cx="50" cy="30" rx="22" ry="4" transform="rotate(15 50 30)" stroke="white" stroke-width="2"/>
                 </svg>
-                <span class="font-black tracking-tighter text-xl">CPG</span>
+                <span class="font-black tracking-tighter text-xl">AWF</span>
             </div>
             
             <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
@@ -209,9 +235,10 @@
         <div class="absolute inset-0 z-[-1] bg-[url('https://placehold.co/1920x1080/000/fff?text=')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         
         <h1 class="text-7xl md:text-9xl font-black italic tracking-tighter mb-4 glitch-text" style="text-shadow: 0 0 20px rgba(255,0,0,0.5);">
-            COSMIC<br><span class="text-red-600">PLAYGROUND</span>
+            ASTROWORLD<br><span class="text-red-600">FEST SHOP</span>
         </h1>
-        <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-400 mb-8 max-w-lg">Welcome to the park that never existed. <br>Secure your ticket to the void.</p>
+        <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-400 mb-8 max-w-lg">The official-inspired merchandise hub for Astroworld energy. <br>Secure your piece before the next drop vanishes.</p>
+        <p class="text-[11px] md:text-xs tracking-[0.25em] uppercase text-gray-500 mb-8">Official style reference: astroworldfest.com</p>
         
         <div class="flex flex-col md:flex-row gap-6 mb-12 w-full max-w-md md:max-w-none justify-center">
             <a href="#shop" class="px-10 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-red-600 hover:text-white hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
@@ -280,7 +307,7 @@
             <span class="feature-chip px-4 py-2">Best Sellers</span>
             <span class="feature-chip px-4 py-2">New Drop</span>
             <span class="feature-chip px-4 py-2">Oversized Fit</span>
-            <span class="feature-chip px-4 py-2">Pronta Entrega</span>
+            <span class="feature-chip px-4 py-2">Ready to Ship</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -334,19 +361,19 @@
     <section class="max-w-7xl mx-auto px-6 pb-24">
         <div class="grid md:grid-cols-3 gap-4 text-center">
             <div class="feature-chip p-6">
-                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Entrega</p>
-                <h3 class="font-black uppercase tracking-wide mb-2">Envio Rápido</h3>
-                <p class="text-sm text-gray-400">Postagem em até 24h para peças em estoque.</p>
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Delivery</p>
+                <h3 class="font-black uppercase tracking-wide mb-2">Fast Dispatch</h3>
+                <p class="text-sm text-gray-400">Orders in stock are dispatched within 24 hours.</p>
             </div>
             <div class="feature-chip p-6">
-                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Pagamento</p>
+                <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Payments</p>
                 <h3 class="font-black uppercase tracking-wide mb-2">Checkout Seguro</h3>
-                <p class="text-sm text-gray-400">Suporte para cartão, PIX e carteira digital.</p>
+                <p class="text-sm text-gray-400">Support for card, instant transfer, and digital wallets.</p>
             </div>
             <div class="feature-chip p-6">
                 <p class="text-red-500 text-xs tracking-widest uppercase mb-2">Exclusividade</p>
                 <h3 class="font-black uppercase tracking-wide mb-2">Drop Limitado</h3>
-                <p class="text-sm text-gray-400">Peças numeradas com reposição incerta.</p>
+                <p class="text-sm text-gray-400">Numbered pieces with uncertain restock.</p>
             </div>
         </div>
     </section>
@@ -450,16 +477,16 @@
         <h3 class="text-3xl font-black uppercase italic tracking-tighter mb-8 text-center">FAQ</h3>
         <div class="space-y-4">
             <details class="faq-item border border-white/10 p-4 rounded-lg">
-                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Qual o prazo de entrega?</summary>
-                <p class="text-sm text-gray-400 mt-3">Brasil: 3 a 10 dias úteis. Internacional: 7 a 20 dias úteis dependendo da alfândega.</p>
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">What are the shipping times?</summary>
+                <p class="text-sm text-gray-400 mt-3">Domestic: 3 to 10 business days. International: 7 to 20 business days depending on customs.</p>
             </details>
             <details class="faq-item border border-white/10 p-4 rounded-lg">
-                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Tem troca de tamanho?</summary>
-                <p class="text-sm text-gray-400 mt-3">Sim. Você pode solicitar troca em até 7 dias após o recebimento com etiqueta preservada.</p>
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Do you offer size exchanges?</summary>
+                <p class="text-sm text-gray-400 mt-3">Yes. You can request an exchange within 7 days after delivery with original tags preserved.</p>
             </details>
             <details class="faq-item border border-white/10 p-4 rounded-lg">
-                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">Como saber meu fit ideal?</summary>
-                <p class="text-sm text-gray-400 mt-3">Recomendamos incluir uma tabela de medidas por peça. Como regra geral, modelagem oversized veste 1 número acima.</p>
+                <summary class="font-bold uppercase tracking-widest cursor-pointer text-sm">How do I choose the right fit?</summary>
+                <p class="text-sm text-gray-400 mt-3">We recommend using each product's size chart. As a rule of thumb, oversized pieces fit one size larger.</p>
             </details>
         </div>
     </section>
@@ -469,11 +496,11 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
             <div>
                 <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
-                    <span class="font-black tracking-tighter text-2xl">CPG</span>
+                    <span class="font-black tracking-tighter text-2xl">AWF</span>
                 </div>
                 <p class="text-gray-600 text-xs uppercase tracking-widest max-w-xs mx-auto md:mx-0">
-                    &copy; 2030 Cosmic PlayGround.<br>
-                    All rights reserved in this dimension.
+                    &copy; 2030 Astroworld Fest Shop Experience.<br>
+                    Inspired by the visual language of astroworldfest.com.
                 </p>
             </div>
             
@@ -492,8 +519,24 @@
     </footer>
 
     <a href="#" class="floating-contact bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-xs px-5 py-3 rounded-full transition">
-        WhatsApp Support
+        WhatsApp Help
     </a>
+
+
+
+    <aside id="cookie-banner" class="cookie-banner p-6 rounded-lg">
+        <h4 class="text-3xl font-black tracking-tight mb-3">We use cookies</h4>
+        <p class="text-gray-300 text-base leading-relaxed mb-5">
+            We use cookies and similar technologies to improve your browsing experience, personalize content,
+            analyze traffic, and protect your session while you shop.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button id="cookie-accept" class="cookie-btn-primary px-6 py-3 font-bold uppercase tracking-wider text-sm">I agree</button>
+            <button id="cookie-preferences" class="cookie-btn-secondary px-6 py-3 font-bold uppercase tracking-wider text-sm">Change my preferences</button>
+        </div>
+        <p id="cookie-pref-text" class="text-xs text-gray-500 mt-3 cookie-hidden">Preference center coming soon — only essential cookies are active by default.</p>
+    </aside>
+
 
     <script>
         const cartButton = document.getElementById('cart-button');
@@ -505,6 +548,25 @@
                 cartCount += 1;
                 cartButton.textContent = `Cart (${cartCount})`;
             });
+        });
+
+        const cookieBanner = document.getElementById('cookie-banner');
+        const cookieAccept = document.getElementById('cookie-accept');
+        const cookiePreferences = document.getElementById('cookie-preferences');
+        const cookiePrefText = document.getElementById('cookie-pref-text');
+        const cookieConsentKey = 'cpg-cookie-consent';
+
+        if (localStorage.getItem(cookieConsentKey) === 'accepted') {
+            cookieBanner.classList.add('cookie-hidden');
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem(cookieConsentKey, 'accepted');
+            cookieBanner.classList.add('cookie-hidden');
+        });
+
+        cookiePreferences.addEventListener('click', () => {
+            cookiePrefText.classList.toggle('cookie-hidden');
         });
     </script>
 
