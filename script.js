@@ -1,4 +1,4 @@
- 
+ console.log
         const cartButton = document.getElementById('cart-button');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
         let cartCount = 0;
