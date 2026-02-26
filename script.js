@@ -38,3 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => banner.style.display = 'none', 500); // Remove do HTML
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Lógica do Carrinho (com verificação)
+    const cartButton = document.getElementById('cart-button');
+    const addButtons = document.querySelectorAll('.add-to-cart');
+    
+    if (cartButton && addButtons.length > 0) {
+        addButtons.forEach(btn => {
+            btn.onclick = () => {
+                let count = parseInt(cartButton.innerText.match(/\d+/)) || 0;
+                cartButton.innerText = `Cart (${count + 1})`;
+                console.log("🛒 Item adicionado!");
+            };
+        });
+    }
+
+    // Lógica do Banner de Cookies (Igual ao que fizemos antes)
+    const banner = document.getElementById('cookie-banner');
+    if (banner && !localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => banner.classList.add('show'), 2000);
+    }
+});
