@@ -363,20 +363,41 @@
         </div>
     </section>
 
-       <section class="max-w-7xl mx-auto px-6 pb-24">
-        <div class="border border-white/10 bg-white/[0.02] rounded-2xl p-8 md:p-12">
-            <p class="text-red-500 text-xs font-bold uppercase tracking-[0.28em] mb-3">Cosmic Portal </p>
-            <link rel="icon" type="image/png" href="Icon Cosmic/CosmicPortal/portal.gif">
+<section id="portal" class="h-screen w-full flex flex-col justify-center items-center bg-black relative z-[100]">
+    <div class="glitch-text mb-12">
+        <h1 class="text-6xl md:text-9xl font-black italic tracking-tighter text-white">LIL THALIS</h1>
+    </div>
+    
+    <div class="flex flex-col gap-6 text-center uppercase font-black tracking-[0.4em] text-sm md:text-base">
+        <a href="#about" class="hover:text-red-600 transition duration-500">The Artist</a>
+        <a href="#music" class="hover:text-red-600 transition duration-500">Discography</a>
+        <a href="#shop" class="hover:text-red-600 transition duration-500">Merch Shop</a>
+        <a href="#tour" class="hover:text-red-600 transition duration-500">Tour Dates</a>
+    </div>
 
-            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white/80 mb-8">Music<br>Videos<br>Merch<br>Tour<br></h3>
-            <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs md:text-sm uppercase tracking-[0.25em] font-bold">
-                <a href="#music" class="portal-link">Music</a>
-                <a href="#visuals" class="portal-link">Videos</a>
-                <a href="#shop" class="portal-link">Merch</a>
-                <a href="#tour" class="portal-link">Tour</a>
+    <div class="absolute bottom-10 animate-bounce">
+        <span class="text-[10px] text-gray-600 uppercase tracking-widest">Scroll to Enter the Void</span>
+    </div>
+</section>
+
+<section id="about" class="min-h-screen flex items-center bg-zinc-950 border-y border-white/5 py-24">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[3/4] bg-zinc-900 border border-white/10 flex items-center justify-center">
+             <span class="text-zinc-700 font-bold uppercase tracking-widest">Your Photo / Aesthetic Visual</span>
+        </div>
+        <div>
+            <h2 class="text-5xl font-black italic uppercase tracking-tighter mb-6 text-red-600">The Vision</h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                Based in Sector 7G, Lil Thalis is more than sound—it's an interstellar experience. 
+                Blending high-fashion streetwear with cosmic frequencies.
+            </p>
+            <div class="flex gap-4">
+                <div class="h-[1px] w-12 bg-white self-center"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.3em]">Established 2024</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="border-t border-white/10 py-16 px-6 bg-black text-center md:text-left">
@@ -398,7 +419,7 @@
 
 <body class="bg-black text-white custom-scrollbar">
     <nav class="p-6 border-b border-white/10">
-        <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-red-500">← Back to Hub</a>
+        <a href=".html" class="text-xs font-bold uppercase tracking-widest hover:text-red-500">← Back to Hub</a>
     </nav>
 
     <main class="max-w-3xl mx-auto px-6 py-20">
