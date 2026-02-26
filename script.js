@@ -17,4 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-    
+    document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+
+    // 1. Verifica se o usuário já aceitou antes
+    if (!localStorage.getItem('cookiesAccepted')) {
+        // 2. Mostra o banner com um leve atraso (mais elegante)
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 2000);
+    } else {
+        banner.style.display = 'none';
+    }
+
+    // 3. Ao clicar em aceitar
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true'); // Salva no navegador
+        banner.classList.remove('show'); // Tira a classe de animação
+        setTimeout(() => banner.style.display = 'none', 500); // Remove do HTML
+    });
+});
