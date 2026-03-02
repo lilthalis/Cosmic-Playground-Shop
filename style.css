@@ -220,3 +220,21 @@ body {
 }
 
 .cookie-hidden { display: none; }
+
+.product-card img {
+    /* O 'contain' garante que a foto inteira apareça sem ser cortada ou esticada */
+    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+    /* Adiciona um respiro para a roupa não encostar nas bordas do quadrado */
+    padding: 20px; 
+}
+
+.aspect-square {
+    /* Garante que o container seja sempre um quadrado perfeito */
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #09090b; /* Um cinza quase preto para combinar com as fotos */
+}
