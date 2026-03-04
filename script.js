@@ -96,3 +96,36 @@ window.onclick = function(event) {
         closePopup();
     }
 }
+
+const pages = {
+    merch: `
+        <h2 class="text-xs font-bold tracking-[0.3em] mb-10 text-gray-300">OFFICIAL STORE</h2>
+        <div class="grid grid-cols-2 gap-10">
+            <div class="item">
+                <img src="Roupasimg/voidhoodie.png" class="w-full bg-gray-50 p-10 hover:scale-105 transition">
+                <p class="mt-4 text-[10px] font-bold">VOID HOODIE - DROP 01</p>
+                <p class="text-[10px] text-gray-400">$85.00</p>
+            </div>
+            <div class="item">
+                <img src="Roupasimg/orbit-sweat.png" class="w-full bg-gray-50 p-10 hover:scale-105 transition">
+                <p class="mt-4 text-[10px] font-bold">ORBIT SWEATSHIRT</p>
+                <p class="text-[10px] text-gray-400">$90.00</p>
+            </div>
+        </div>`,
+    music: `<h2 class="text-xs font-bold tracking-[0.3em] mb-10 text-gray-300">DISCOGRAPHY</h2><p>Eternal Thalis Coming Soon...</p>`
+};
+
+function loadContent(pageName) {
+    const area = document.getElementById('content-area');
+    area.classList.remove('opacity-100');
+    area.classList.add('opacity-0');
+
+    setTimeout(() => {
+        area.innerHTML = pages[pageName] || "<h1>Coming Soon</h1>";
+        area.classList.remove('opacity-0');
+        area.classList.add('opacity-100');
+    }, 300);
+}
+
+// Carregar a loja por padrão ao abrir
+window.onload = () => loadContent('merch');

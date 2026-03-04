@@ -87,3 +87,28 @@ footer {
     color: #5b21b6;
     opacity: 0.6; 
 }
+
+/* Tamanho controlado do Saturno para não esmagar o menu */
+.saturn-container {
+    width: 200px; /* Reduzi para as letras não ficarem pequenas perto dele */
+    height: auto;
+}
+
+.saturn-icon {
+    width: 100%;
+    filter: grayscale(1) contrast(1.1);
+    mix-blend-mode: multiply; /* Essencial para fundo branco */
+}
+
+.uzi-link {
+    font-size: 3.5rem; /* Ajuste para não brigar com o Saturno */
+    font-weight: 900;
+    color: #8b5cf6; 
+    transition: 0.3s;
+}
+
+/* Garante que o conteúdo da direita role se for muito longo */
+#content-area {
+    height: 100vh;
+    overflow-y: auto;
+}

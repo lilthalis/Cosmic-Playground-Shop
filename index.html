@@ -6,9 +6,6 @@
     <title>COSMIC FESTIVAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-   <div class="saturn-container">
-    <img src="Satuengif/saturn.gif" alt="Cosmic Saturn" class="saturn-icon">
-</div>
 </head>
 <body class="bg-white text-[#b5b5b5]">
     <div id="launch-popup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -26,40 +23,33 @@
     </div>
 </div>
 
-<main class="min-h-screen p-10 flex">
-    <div class="w-1/4 flex flex-col justify-between h-[90vh] sticky top-10">
+<main class="flex min-h-screen">
+    <div class="w-[350px] sticky top-0 h-screen p-10 flex flex-col justify-between border-r border-gray-100">
         <div>
+            <div class="saturn-container mb-10">
+                <img src="Satuengif/saturn.gif" class="saturn-icon">
+            </div>
 
-            <nav class="navigation-links mt-8">
-                <ul class="flex flex-col">
-                    <li><a href="javascript:void(0)" onclick="showContent('music')" class="uzi-link">MUSIC</a></li>
-                    <li><a href="javascript:void(0)" onclick="showContent('videos')" class="uzi-link">VIDEOS</a></li>
-                    <li><a href="javascript:void(0)" onclick="showContent('merch')" class="uzi-link">MERCH</a></li>
-                    <li><a href="javascript:void(0)" onclick="showContent('tour')" class="uzi-link">TOUR</a></li>
-                    <li><a href="javascript:void(0)" onclick="showContent('email')" class="uzi-link">EMAIL</a></li>
+            <nav>
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="javascript:void(0)" onclick="loadContent('music')" class="uzi-link">MUSIC</a></li>
+                    <li><a href="javascript:void(0)" onclick="loadContent('merch')" class="uzi-link">MERCH</a></li>
+                    <li><a href="javascript:void(0)" onclick="loadContent('tour')" class="uzi-link">TOUR</a></li>
+                    <li><a href="javascript:void(0)" onclick="loadContent('email')" class="uzi-link">EMAIL</a></li>
                 </ul>
             </nav>
         </div>
 
-      <footer class="footer-container">
-    <div class="social-icons flex gap-6">
-        <a href="#">f</a>
-        <a href="#">𝕩</a>
-        <a href="#">📸</a>
-        <a href="#">▶️</a>
-        <a href="#">🎵</a>
-    </div>
-    <p class="copyright-text">
-        © 2026 LIL THALIS OFFICIAL COSMIC PLAYGROUND RECORDS
-    </p>
-</footer>
+        <footer>
+            <div class="social-icons flex gap-4 mb-4">
+                <a href="#">f</a> <a href="#">𝕩</a> <a href="#">📸</a>
+            </div>
+            <p class="copyright-text">© 2026 LIL THALIS OFFICIAL</p>
+        </footer>
     </div>
 
-    <div id="dynamic-content" class="w-3/4 pl-20 pt-10">
-        <div class="flex justify-center items-center h-full">
-            <img src="sua-imagem-placeholder.jpg" class="max-w-md opacity-20">
+    <div id="content-area" class="flex-1 p-20 opacity-0 transition-opacity duration-500">
         </div>
-    </div>
 </main>
 
     <script src="script.js"></script>
