@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white text-[#b5b5b5]">
+    <div id="launch-popup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+    <div class="bg-white p-8 max-w-4xl w-full relative flex flex-col md:flex-row items-center gap-8 mx-4">
+        <button onclick="closePopup()" class="absolute top-4 left-4 text-3xl font-light hover:scale-110 transition">✕</button>
+        
+        <div class="w-full md:w-1/2">
+            <h2 class="text-3xl font-black italic uppercase leading-none mb-4 text-black">Cosmic Playground Future<br><span class="text-purple-600">Out Now</span></h2>
+            <a href="" target="_blank" class="text-sm font-bold uppercase tracking-widest border-b-2 border-black pb-1 hover:text-purple-600 hover:border-purple-600 transition">Listen Now</a>
+        </div>
+
+        <div class="w-full md:w-1/2">
+            <img src="" alt="New Release" class="w-full shadow-2xl">
+        </div>
+    </div>
+</div>
 
 <main class="min-h-screen p-10 flex">
     <div class="w-1/4 flex flex-col justify-between h-[90vh] sticky top-10">
