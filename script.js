@@ -74,3 +74,25 @@ function showContent(section) {
 
 // Inicia com a Merch aberta (igual ao site do Uzi em alguns momentos)
 window.onload = () => showContent('merch');
+
+function closePopup() {
+    const popup = document.getElementById('launch-popup');
+    if (popup) {
+        // Adiciona efeito de desaparecer suavemente
+        popup.style.opacity = '0';
+        popup.style.visibility = 'hidden';
+        
+        // Remove do layout após a animação
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 400);
+    }
+}
+
+// Opcional: Fechar ao clicar fora da caixa branca
+window.onclick = function(event) {
+    const popup = document.getElementById('launch-popup');
+    if (event.target == popup) {
+        closePopup();
+    }
+}
