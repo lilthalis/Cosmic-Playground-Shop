@@ -45,3 +45,33 @@ body {
         width: 150px;
     }
 }
+
+/* Container do Rodapé */
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre ícones e texto */
+    margin-top: 20px;
+}
+
+/* Tamanho das Redes Sociais */
+.social-icons a {
+    font-size: 1.5rem; /* Aumenta o tamanho dos ícones (ajuste conforme preferir) */
+    color: #b5b5b5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #000000;
+}
+
+/* Tamanho do seu Nome / Copyright */
+.copyright-text {
+    font-size: 12px; /* Aumenta um pouco o texto que estava muito pequeno */
+    letter-spacing: 2px; /* Mantém o estilo espaçado do Uzi */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #b5b5b5;
+    opacity: 0.8; /* Um pouco mais visível que antes */
+}
