@@ -65,3 +65,31 @@ function navigate(page) {
 window.onload = () => {
     navigate('merch');
 };
+
+const pageData = {
+    merch: `
+        <p style="font-weight: bold; letter-spacing: 2px;">OFFICIAL STORE</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="Roupasimg/voidhoodie.png" style="width:100%; background:#f7f7f7; padding:20px;">
+                <h3 style="font-size:12px; margin-top:10px;">VOID HOODIE</h3>
+                <p style="font-size:12px; color:#888;">$85.00</p>
+            </div>
+            </div>`
+};
+
+function navigate(page) {
+    const area = document.getElementById('content-area');
+    if (!area) return;
+
+    // Efeito de transição suave
+    area.style.opacity = '0';
+    
+    setTimeout(() => {
+        area.innerHTML = pageData[page] || "<h2>COMING SOON</h2>";
+        area.style.opacity = '1';
+    }, 200);
+}
+
+// Isso faz os produtos aparecerem sozinhos assim que o site abre
+window.onload = () => navigate('merch');
