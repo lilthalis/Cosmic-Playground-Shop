@@ -21,16 +21,15 @@ body {
     mix-blend-mode: multiply; /* Faz o branco do GIF sumir no fundo branco */
 }
 
-/* Links Gigantes e Cinzas */
 .uzi-link {
-    font-size: 8rem; /* Tamanho massivo conforme o site do Uzi */
+   font-size: 3rem;
     font-weight: 900;
     color: #e0e0e0; /* Cinza claro */
-    line-height: 0.85;
+    line-height: 1; 
     text-decoration: none;
     transition: color 0.3s ease;
     display: inline-block;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 .uzi-link:hover {
