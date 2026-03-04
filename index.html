@@ -3,54 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COSMIC FESTIVAL</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>LIL THALIS OFFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-[#b5b5b5]">
-    <div id="launch-popup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-    <div class="bg-white p-8 max-w-4xl w-full relative flex flex-col md:flex-row items-center gap-8 mx-4">
-        <button onclick="closePopup()" class="absolute top-4 left-4 text-3xl font-light hover:scale-110 transition">✕</button>
-        
-        <div class="w-full md:w-1/2">
-            <h2 class="text-3xl font-black italic uppercase leading-none mb-4 text-black">Cosmic Playground Future<br><span class="text-purple-600">Out Now</span></h2>
-            <a href="" target="_blank" class="text-sm font-bold uppercase tracking-widest border-b-2 border-black pb-1 hover:text-purple-600 hover:border-purple-600 transition">Listen Now</a>
-        </div>
+<body>
 
-        <div class="w-full md:w-1/2">
-            <img src="" alt="New Release" class="w-full shadow-2xl">
-        </div>
-    </div>
-</div>
-
-<main class="flex min-h-screen">
-    <div class="w-[350px] sticky top-0 h-screen p-10 flex flex-col justify-between border-r border-gray-100">
-        <div>
-            <div class="saturn-container mb-10">
-                <img src="Satuengif/saturn.gif" class="saturn-icon">
+    <main class="main-container">
+        <aside class="sidebar">
+            <div class="top-section">
+                <div class="saturn-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" class="saturn-icon" alt="Saturn">
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="javascript:void(0)" onclick="navigate('music')" class="uzi-link">MUSIC</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('merch')" class="uzi-link">MERCH</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('tour')" class="uzi-link">TOUR</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('email')" class="uzi-link">EMAIL</a></li>
+                    </ul>
+                </nav>
             </div>
 
-            <nav>
-                <ul class="flex flex-col space-y-2">
-                    <li><a href="javascript:void(0)" onclick="loadContent('music')" class="uzi-link">MUSIC</a></li>
-                    <li><a href="javascript:void(0)" onclick="loadContent('merch')" class="uzi-link">MERCH</a></li>
-                    <li><a href="javascript:void(0)" onclick="loadContent('tour')" class="uzi-link">TOUR</a></li>
-                    <li><a href="javascript:void(0)" onclick="loadContent('email')" class="uzi-link">EMAIL</a></li>
-                </ul>
-            </nav>
-        </div>
+            <footer class="sidebar-footer">
+                <div class="social-links">
+                    <a href="#">FB</a> <a href="#">IG</a> <a href="#">YT</a> <a href="#">SC</a>
+                </div>
+                <p class="copyright">© 2026 LIL THALIS OFFICIAL<br>COSMIC PLAYGROUND RECORDS</p>
+            </footer>
+        </aside>
 
-        <footer>
-            <div class="social-icons flex gap-4 mb-4">
-                <a href="#">f</a> <a href="#">𝕩</a> <a href="#">📸</a>
-            </div>
-            <p class="copyright-text">© 2026 LIL THALIS OFFICIAL</p>
-        </footer>
-    </div>
-
-    <div id="content-area" class="flex-1 p-20 opacity-0 transition-opacity duration-500">
-        </div>
-</main>
+        <section id="content-area" class="content-area">
+            </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

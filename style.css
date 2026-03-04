@@ -1,3 +1,4 @@
+/* Reset Basic */
 * {
     margin: 0;
     padding: 0;
@@ -6,109 +7,142 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff !important; /* Branco absoluto conforme sua escolha */
+    background-color: #ffffff; /* Ultra-clean white background */
     color: #000000;
+    overflow-x: hidden;
+}
+
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR LAYOUT */
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    padding: 50px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    z-index: 100;
+}
+
+/* SATURNO ICON */
+.saturn-container {
+    width: 180px;
+    margin-bottom: 30px;
 }
 
 .saturn-icon {
-    width: 250px;
-    /* Se o GIF tiver fundo preto, o multiply faz ele sumir no fundo branco */
-    mix-blend-mode: multiply; 
-    /* Filtro para transformar o Saturno cinza em ROXO */
-    filter: sepia(1) saturate(10) hue-rotate(240deg) brightness(0.8);
-    transition: transform 0.5s ease;
+    width: 100%;
+    mix-blend-mode: multiply; /* Removes black backgrounds from GIFs */
+    filter: grayscale(1) contrast(1.2);
+}
+
+/* TYPOGRAPHY */
+.nav-list {
+    list-style: none;
 }
 
 .uzi-link {
     font-size: 4rem;
     font-weight: 900;
-    color: #8b5cf6; /* Roxo vibrante para os links */
+    color: #e0e0e0; /* Light grey as reference */
     text-decoration: none;
-    line-height: 1;
-    letter-spacing: -1px;
+    line-height: 0.85;
+    display: block;
+    letter-spacing: -2px;
     transition: all 0.3s ease;
-}
-
-.uzi-link:hover {
-    color: #4c1d95; /* Roxo mais escuro no hover */
-    transform: translateX(10px);
-}
-
-/* Ajuste do botão fechar (X) no fundo branco */
-.close-btn {
-    color: #000000 !important; /* Garante que o X apareça no branco */
-    font-weight: bold;
     cursor: pointer;
 }
-.uzi-link:hover {
-    /* Azul Ciano Neon ao passar o mouse - Identidade Única */
-    color: #00f2ff; 
+
+.uzi-link:hover, .uzi-link.active {
+    color: #8b5cf6; /* Your signature Purple */
     transform: translateX(10px);
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .uzi-link {
-        font-size: 4rem;
-    }
-    .saturn-container {
-        width: 150px;
-    }
+/* CONTENT AREA */
+.content-area {
+    flex: 1;
+    margin-left: 350px;
+    padding: 80px;
+    transition: opacity 0.4s ease;
 }
 
-/* Container do Rodapé */
-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
+/* MERCH GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.product-card img {
+    width: 100%;
+    background-color: #f9f9f9; /* Subtle grey for product background */
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: translateY(-8px);
+}
+
+.product-info h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.product-info p {
+    font-size: 11px;
+    color: #999;
+}
+
+/* FOOTER */
+.sidebar-footer {
     margin-top: 20px;
 }
 
-/* Tamanho das Redes Sociais */
-.social-icons a {
-    font-size: 1.5rem; 
-    /* Roxo médio para os ícones */
-    color: #6d28d9;
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #ccc;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #00f2ff;
-}
-
-/* Tamanho do seu Nome / Copyright */
-.copyright-text {
-    font-size: 12px; 
-    letter-spacing: 2px; 
-    text-transform: uppercase;
+    font-size: 0.8rem;
     font-weight: bold;
-    /* Texto de copyright em roxo suave */
-    color: #5b21b6;
-    opacity: 0.6; 
 }
 
-/* Tamanho controlado do Saturno para não esmagar o menu */
-.saturn-container {
-    width: 200px; /* Reduzi para as letras não ficarem pequenas perto dele */
-    height: auto;
+.copyright {
+    font-size: 9px;
+    color: #ddd;
+    text-transform: uppercase;
+    line-height: 1.5;
 }
 
-.saturn-icon {
-    width: 100%;
-    filter: grayscale(1) contrast(1.1);
-    mix-blend-mode: multiply; /* Essencial para fundo branco */
-}
-
-.uzi-link {
-    font-size: 3.5rem; /* Ajuste para não brigar com o Saturno */
-    font-weight: 900;
-    color: #8b5cf6; 
-    transition: 0.3s;
-}
-
-/* Garante que o conteúdo da direita role se for muito longo */
-#content-area {
-    height: 100vh;
-    overflow-y: auto;
+/* RESPONSIVE DESIGN (Mobile) */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+    .content-area {
+        margin-left: 0;
+        padding: 30px;
+    }
+    .uzi-link {
+        font-size: 3rem;
+    }
 }
