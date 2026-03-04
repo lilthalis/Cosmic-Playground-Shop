@@ -1,31 +1,17 @@
-// Smooth Scroll
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-
-// Cart Logic Simple
-let cartCount = 0;
-const cartBtn = document.getElementById('cart-btn');
-
-document.querySelectorAll('.add-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        cartCount++;
-        cartBtn.innerText = `Cart (${cartCount})`;
-        button.innerText = "Added!";
-        button.style.borderColor = "#00d4ff";
-        
-        setTimeout(() => {
-            button.innerText = "Add to Bag";
-            button.style.borderColor = "";
-        }, 2000);
-    });
+// Efeito de fade-in ao carregar
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = "0";
+    document.body.style.transition = "opacity 1.5s ease";
+    
+    setTimeout(() => {
+        document.body.style.opacity = "1";
+    }, 100);
 });
 
-// Parallax effect for the Saturn
-window.addEventListener('mousemove', (e) => {
-    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
-    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
-    document.querySelector('.saturn-gif').style.transform = `translate(${moveX}px, ${moveY}px)`;
+// Interação simples de som (opcional)
+const links = document.querySelectorAll('.uzi-link');
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        console.log("Exploring Cosmic sector: " + link.innerText);
+    });
 });

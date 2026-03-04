@@ -1,85 +1,48 @@
-/* Custom Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Space Mono', monospace;
-    cursor: crosshair;
+    font-family: 'Inter', sans-serif; /* Fonte robusta para o menu */
+    background-color: #ffffff !important; /* Branco absoluto conforme o exemplo */
 }
 
-.logo-text, .main-title, .section-title {
-    font-family: 'Orbitron', sans-serif;
+/* O Saturno posicionado no canto superior esquerdo */
+.saturn-container {
+    width: 250px;
+    margin-bottom: -20px;
 }
 
-/* Saturn Positioning */
-.saturn-background {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
+.saturn-icon {
+    width: 100%;
+    filter: grayscale(1) contrast(1.2); /* Deixa o Saturno com aspecto metálico/cinza */
+    mix-blend-mode: multiply; /* Faz o branco do GIF sumir no fundo branco */
 }
 
-.saturn-gif {
-    width: 700px;
-    max-width: 90%;
-    opacity: 0.4;
-    filter: hue-rotate(280deg) drop-shadow(0 0 80px #7b2cff);
-    animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(10deg); }
-}
-
-/* Glassmorphism Navigation */
-.nav-blur {
-    background: rgba(5, 0, 10, 0.7);
-    backdrop-filter: blur(15px);
-}
-
-/* Text Gradients */
-.glitter-text {
-    background: linear-gradient(90deg, #ff00e5, #7b2cff, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(123, 44, 255, 0.5));
-}
-
-/* Buttons */
-.cta-primary {
-    background: #7b2cff;
-    color: white;
-    padding: 15px 40px;
+/* Links Gigantes e Cinzas */
+.uzi-link {
+    font-size: 8rem; /* Tamanho massivo conforme o site do Uzi */
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(123, 44, 255, 0.4);
+    color: #e0e0e0; /* Cinza claro */
+    line-height: 0.85;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    letter-spacing: -2px;
 }
 
-.cta-primary:hover {
-    background: #ff00e5;
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 0, 229, 0.6);
+.uzi-link:hover {
+    color: #000000; /* Fica preto ao passar o mouse */
 }
 
-/* Cards */
-.uzi-card {
-    background: rgba(20, 0, 40, 0.3);
-    border: 1px solid rgba(123, 44, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 40px;
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.uzi-card:hover {
-    transform: translateY(-15px);
-    border-color: #ff00e5;
-    background: rgba(40, 0, 80, 0.4);
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .uzi-link {
+        font-size: 4rem;
+    }
+    .saturn-container {
+        width: 150px;
+    }
 }
