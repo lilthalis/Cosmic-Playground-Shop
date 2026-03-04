@@ -1,41 +1,31 @@
-Const panel = document.getElementById("sidePanel");
-const content = document.getElementById("panelContent");
-
-function openPanel(section){
-  panel.classList.add("active");
-
-  if(section === "music"){
-    content.innerHTML = `
-      <h2>Music</h2>
-      <p>Albums</p>
-      <p>Singles</p>
-      <p>Unreleased</p>
-    `;
-  }
-
-  if(section === "videos"){
-    content.innerHTML = `
-      <h2>Videos</h2>
-      <p>Official Clips</p>
-      <p>Visualizers</p>
-    `;
-  }
-
-  if(section === "tour"){
-    content.innerHTML = `
-      <h2>Tour</h2>
-      <p>No dates yet...</p>
-    `;
-  }
-
-  if(section === "about"){
-    content.innerHTML = `
-      <h2>About</h2>
-      <p>Cosmic Playground is a universe created by the artist.</p>
-    `;
-  }
+// Smooth Scroll
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 
-function closePanel(){
-  panel.classList.remove("active");
-}
+// Cart Logic Simple
+let cartCount = 0;
+const cartBtn = document.getElementById('cart-btn');
+
+document.querySelectorAll('.add-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        cartBtn.innerText = `Cart (${cartCount})`;
+        button.innerText = "Added!";
+        button.style.borderColor = "#00d4ff";
+        
+        setTimeout(() => {
+            button.innerText = "Add to Bag";
+            button.style.borderColor = "";
+        }, 2000);
+    });
+});
+
+// Parallax effect for the Saturn
+window.addEventListener('mousemove', (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+    document.querySelector('.saturn-gif').style.transform = `translate(${moveX}px, ${moveY}px)`;
+});

@@ -1,36 +1,62 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-
-<title>Cosmic Playground</title>
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETERNAL COSMIC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<!-- FUNDO -->
-<div class="cosmic-bg"></div>
-<!-- HEADER -->
-<header>
+<body class="bg-[#05000a] text-[#e0aaff] overflow-x-hidden">
 
-<h1 class="logo">COSMIC PLAYGROUND</h1>
-<nav>
+    <div class="saturn-background">
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" alt="Rotating Saturn" class="saturn-gif">
+    </div>
 
-<button onclick="openPanel('music')">Music</button>
-<button onclick="openPanel('videos')">Videos</button>
-<button onclick="openPanel('tour')">Tour</button>
-<button onclick="openPanel('about')">About</button>
+    <nav class="nav-blur sticky top-0 z-50 px-8 py-6 flex justify-between items-center border-b border-purple-500/20">
+        <div class="logo-text uppercase italic tracking-tighter text-2xl">Lil Thalis</div>
+        <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[0.4em]">
+            <a href="#shop" class="hover:text-pink-400 transition">Shop</a>
+            <a href="#music" class="hover:text-pink-400 transition">Frequency</a>
+            <a href="#about" class="hover:text-pink-400 transition">Identity</a>
+        </div>
+        <button id="cart-btn" class="text-[10px] border border-purple-500/40 px-6 py-2 rounded-full hover:bg-purple-500 hover:text-white transition">Cart (0)</button>
+    </nav>
 
-</nav>
+    <header class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="uzi-badge mb-6">
+            <span class="text-[9px] tracking-[0.6em] uppercase">Entering Sector 1600</span>
+        </div>
+        <h1 class="main-title text-7xl md:text-[10rem] leading-none uppercase italic font-black">
+            COSMIC<br><span class="glitter-text">THALIS</span>
+        </h1>
+        <p class="mt-6 text-xs md:text-sm tracking-[0.3em] uppercase max-w-xl text-purple-300/60 leading-relaxed">
+            Interdimensional frequencies and high-end street garments designed for the inhabitants of the void.
+        </p>
+        
+        <div class="mt-12 flex gap-6">
+            <button onclick="scrollToSection('shop')" class="cta-primary">Enter Shop</button>
+            <button onclick="scrollToSection('music')" class="cta-secondary">Listen</button>
+        </div>
+    </header>
 
-</header>
-<!-- PAINEL LATERAL -->
-<div id="sidePanel" class="panel">
-<span class="closeBtn" onclick="closePanel()">✕</span>
-<div id="panelContent"></div>
-</div>
+    <section id="shop" class="max-w-7xl mx-auto px-8 py-32">
+        <h2 class="section-title text-center text-4xl mb-20 uppercase tracking-[0.8em]">The Collection</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12" id="product-list">
+            <div class="uzi-card p-6 group">
+                <div class="relative aspect-square mb-8 overflow-hidden rounded-2xl bg-black/40 border border-purple-500/20">
+                    <img src="Roupasimg/voidhoodie.png" alt="Hoodie" class="product-img group-hover:scale-110 transition duration-700">
+                </div>
+                <h3 class="font-bold text-xl uppercase italic mb-2">Void Playground Hoodie</h3>
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-500 font-black text-xl">$95.00</span>
+                    <button class="add-btn">Add to Bag</button>
+                </div>
+            </div>
+            </div>
+    </section>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
