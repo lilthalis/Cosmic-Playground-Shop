@@ -5,37 +5,41 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif; 
-    /* Mudança para Roxo Quase Preto para fugir do branco do Uzi */
-    background-color: #0a0510 !important; 
-    color: #8b5cf6 !important;
-}
-
-/* O Saturno posicionado no canto superior esquerdo */
-.saturn-container {
-    width: 250px;
-    margin-bottom: -20px;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff !important; /* Branco absoluto conforme sua escolha */
+    color: #000000;
 }
 
 .saturn-icon {
-    width: 100%;
-    /* Filtro para deixar o Saturno com brilho Roxo/Azulado metálico */
-    filter: hue-rotate(250deg) brightness(1.1) contrast(1.3); 
-    /* Removido o multiply para funcionar no fundo escuro */
+    width: 250px;
+    /* Se o GIF tiver fundo preto, o multiply faz ele sumir no fundo branco */
+    mix-blend-mode: multiply; 
+    /* Filtro para transformar o Saturno cinza em ROXO */
+    filter: sepia(1) saturate(10) hue-rotate(240deg) brightness(0.8);
+    transition: transform 0.5s ease;
 }
 
 .uzi-link {
     font-size: 4rem;
     font-weight: 900;
-    /* Roxo escuro para os links em repouso */
-    color: #4c1d95; 
-    line-height: 1; 
+    color: #8b5cf6; /* Roxo vibrante para os links */
     text-decoration: none;
-    transition: all 0.4s ease;
-    display: inline-block;
+    line-height: 1;
     letter-spacing: -1px;
+    transition: all 0.3s ease;
 }
 
+.uzi-link:hover {
+    color: #4c1d95; /* Roxo mais escuro no hover */
+    transform: translateX(10px);
+}
+
+/* Ajuste do botão fechar (X) no fundo branco */
+.close-btn {
+    color: #000000 !important; /* Garante que o X apareça no branco */
+    font-weight: bold;
+    cursor: pointer;
+}
 .uzi-link:hover {
     /* Azul Ciano Neon ao passar o mouse - Identidade Única */
     color: #00f2ff; 
