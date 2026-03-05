@@ -1,4 +1,6 @@
-/* Reset Basic */
+/* 1. IMPORTAÇÃO DA FONTE ESPACIAL */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +9,12 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff; /* Ultra-clean white background */
+    background-color: #ffffff; 
     color: #000000;
     overflow-x: hidden;
+    /* Adicionando um fundo estelar sutil para descaracterizar plágio */
+    background-image: radial-gradient(#8b5cf6 0.5px, transparent 0.5px);
+    background-size: 60px 60px;
 }
 
 .main-container {
@@ -17,152 +22,128 @@ body {
     min-height: 100vh;
 }
 
-/* SIDEBAR LAYOUT */
+/* 2. SIDEBAR (MENU LATERAL) */
 .sidebar {
     width: 350px;
     height: 100vh;
     padding: 50px;
-    position: fixed;
+    position: fixed; /* Fixo no PC */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: white;
     z-index: 100;
+    border-right: 1px solid #f0f0f0;
 }
 
-/* SATURNO ICON */
 .saturn-container {
     width: 180px;
     margin-bottom: 30px;
+    animation: float 6s ease-in-out infinite; /* Saturno flutuando */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 .saturn-icon {
     width: 100%;
-    mix-blend-mode: multiply; /* Removes black backgrounds from GIFs */
-    filter: grayscale(1) contrast(1.2);
+    mix-blend-mode: multiply;
+    filter: grayscale(0.5) contrast(1.1);
 }
 
-/* TYPOGRAPHY */
+/* 3. LINKS (ESTILO COSMIC) */
 .nav-list {
     list-style: none;
 }
 
 .uzi-link {
-    font-size: 5.5rem;
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista para evitar plágio */
+    font-size: 4.5rem; /* Ajustado para não quebrar tanto */
     font-weight: 900;
-    color: #ce8ef3; /* Light grey as reference */
+    color: #e0e0e0; /* Cinza claro inicial */
     text-decoration: none;
-    line-height: 0.85;
+    line-height: 0.9;
     display: block;
     letter-spacing: -2px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
 .uzi-link:hover, .uzi-link.active {
-    color: #8b5cf6; /* Your signature Purple */
-    transform: translateX(10px);
+    color: #8b5cf6; /* Roxo Cósmico */
+    transform: translateX(15px) scale(1.05);
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
 }
 
-/* CONTENT AREA */
+/* 4. ÁREA DE CONTEÚDO */
 .content-area {
     flex: 1;
-    margin-left: 350px;
+    margin-left: 350px; /* Margem apenas para PC */
     padding: 80px;
-    transition: opacity 0.4s ease;
+    transition: all 0.5s ease;
 }
 
-/* MERCH GRID */
+/* 5. GRADE DE PRODUTOS */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
+    gap: 40px;
     margin-top: 40px;
+}
+
+.product-card {
+    text-align: left;
 }
 
 .product-card img {
     width: 100%;
-    background-color: #f9f9f9; /* Subtle grey for product background */
+    background-color: #fcfcfc;
     padding: 30px;
-    transition: transform 0.3s ease;
+    border-radius: 25px; /* Bordas arredondadas = menos plágio */
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover img {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    border-color: #8b5cf6;
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.1);
 }
 
-.product-info h3 {
-    font-size: 11px;
-    text-transform: uppercase;
-    margin-top: 15px;
-}
-
-.product-info p {
-    font-size: 11px;
-    color: #999;
-}
-
-/* FOOTER */
-.sidebar-footer {
-    margin-top: 20px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.social-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.copyright {
-    font-size: 9px;
-    color: #ddd;
-    text-transform: uppercase;
-    line-height: 1.5;
-}
-
-/* RESPONSIVE DESIGN (Mobile) */
+/* 6. RESPONSIVIDADE (CELULAR) */
 @media (max-width: 1024px) {
     .main-container {
-        flex-direction: column;
+        flex-direction: column; /* Menu em cima, conteúdo embaixo */
     }
+
     .sidebar {
-        position: relative;
+        position: relative; /* Solta o menu no celular */
         width: 100%;
         height: auto;
-        padding: 30px;
+        padding: 40px 20px;
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
     }
+
+    .saturn-container {
+        margin: 0 auto 20px auto;
+        width: 120px;
+    }
+
     .content-area {
-        margin-left: 0;
-        padding: 30px;
+        margin-left: 0; /* Remove a margem lateral no celular */
+        padding: 40px 20px;
     }
+
     .uzi-link {
-        font-size: 3rem;
+        font-size: 2.8rem; /* Letras menores para caber na tela */
+        text-align: center;
     }
-}
 
-.main-container {
-    display: flex; /* Coloca menu e produtos lado a lado */
-}
-
-.content-area {
-    flex: 1;
-    margin-left: 350px; /* Dá espaço para o menu fixo não cobrir os produtos */
-    padding: 50px;
-    min-height: 100vh;
-    opacity: 1 !important; /* Força a visibilidade para teste */
-    display: block;
-}
-
-/* Garante que os produtos fiquem em grade como antes */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    .product-grid {
+        grid-template-columns: 1fr; /* Um produto por linha no celular */
+    }
 }
