@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a0014"> <title>LIL THALIS | COSMIC PLAYGROUND</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>LIL THALIS OFFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="splash-screen" class="splash-overlay">
-        <div class="splash-content">
-            <div class="splash-layout">
-                <div class="splash-text">
-                    <h2 class="album-title">COSMIC<br>PLAYGROUND</h2>
-                    <p class="album-status">OUT NOW</p>
-                    <a href="javascript:void(0)" class="btn-primary" onclick="closeSplash()">ENTER GALAXY</a>
-                </div>
-                <div class="splash-image">
-                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" alt="Album Art">
-                </div>
-            </div>
-        </div>
-    </div>
+    <main class="main-container">
+        <aside class="sidebar">
+            <div class="top-section">
+                <div class="saturn-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" class="saturn-icon" alt="Saturn">
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="javascript:void(0)" onclick="navigate('music')" class="uzi-link">MUSIC</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('merch')" class="uzi-link">MERCH</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('tour')" class="uzi-link">TOUR</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('about')" class="uzi-link">ABOUT</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigate('email')" class="uzi-link">EMAIL</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-    <main class="main-container">
-        <aside class="sidebar">
-            <div class="top-section">
-                <div class="saturn-container">
-                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" class="saturn-icon" alt="Saturn Icon">
-                </div>
-                
-                <nav>
-                    <ul class="nav-list">
-                        <li><a href="javascript:void(0)" onclick="navigate('music')" class="uzi-link">MUSIC</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('merch')" class="uzi-link">MERCH</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('tour')" class="uzi-link">TOUR</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('about')" class="uzi-link">ABOUT</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('email')" class="uzi-link">EMAIL</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <footer class="sidebar-footer">
+                <div class="social-links">
+                    <a href="#">FB</a> <a href="#">IG</a> <a href="#">YT</a> <a href="#">SC</a>
+                </div>
+                <p class="copyright">© 2026 LIL THALIS OFFICIAL<br>COSMIC PLAYGROUND RECORDS</p>
+            </footer>
+        </aside>
 
-            <footer class="sidebar-footer">
-                <div class="social-links">
-                    <a href="#">FB</a> <a href="#">IG</a> <a href="#">YT</a> <a href="#">SC</a>
-                </div>
-                <p class="copyright">© 2026 LIL THALIS OFFICIAL<br>COSMIC PLAYGROUND RECORDS</p>
-            </footer>
-        </aside>
+        <section id="content-area" class="content-area">
+ </section>
+    </main>
 
-        <section id="content-area" class="content-area">
-            </section>
-    </main>
-
-    <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
