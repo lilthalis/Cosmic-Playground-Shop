@@ -147,3 +147,56 @@ body {
         grid-template-columns: 1fr; /* Um produto por linha no celular */
     }
 }
+
+/* --- CORREÇÃO DE SOBREPOSIÇÃO (PC) --- */
+.main-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    position: fixed; /* Fixa no PC para não sumir no scroll */
+    left: 0;
+    top: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    z-index: 1000;
+}
+
+.content-area {
+    flex: 1;
+    margin-left: 350px; /* ABRE ESPAÇO para o menu não tampar nada */
+    padding: 60px;
+    width: calc(100% - 350px);
+}
+
+/* --- CORREÇÃO PARA CELULAR (ONDE ESTÁ O BUG) --- */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column; /* Coloca um embaixo do outro */
+    }
+
+    .sidebar {
+        position: relative; /* PARA DE FLUTUAR e libera o espaço */
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .content-area {
+        margin-left: 0; /* REMOVE o buraco na esquerda no celular */
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .uzi-link {
+        font-size: 3rem; /* Diminui a letra para não vazar da tela */
+    }
+}
