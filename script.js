@@ -1,4 +1,4 @@
-// Database of content for each section
+// 1. BANCO DE DADOS DE CONTEÚDO (Cosmic PlayGround Edition)
 const pageData = {
     merch: `
         <p class="section-label">OFFICIAL STORE</p>
@@ -20,76 +20,86 @@ const pageData = {
         </div>`,
     music: `
         <p class="section-label">DISCOGRAPHY</p>
-        <div style="margin-top: 100px;">
-            <h1 style="font-size: 4rem; line-height: 0.9;">ETERNAL<br>THALIS 2</h1>
-            <p style="color: #8b5cf6; font-weight: bold; margin-top: 20px;">OUT NOW ON ALL PLATFORMS</p>
+        <div class="cosmic-content" style="margin-top: 100px;">
+            <h1 style="font-family: 'Orbitron', sans-serif; font-size: 4rem; line-height: 0.9;">COSMIC<br>PLAYGROUND</h1>
+            <p style="color: #8b5cf6; font-weight: bold; margin-top: 20px; letter-spacing: 3px;">AVAILABLE ON ALL GALAXIES</p>
         </div>`,
     tour: `
         <p class="section-label">WORLD TOUR</p>
-        <div style="margin-top: 100px;">
-            <h2 style="color: #ccc;">NO DATES SCHEDULED AT THE MOMENT.</h2>
+        <div style="margin-top: 100px; text-align: center;">
+            <h2 style="color: #ccc; font-family: 'Orbitron', sans-serif;">SYSTEM CALIBRATING... NO DATES YET.</h2>
         </div>`,
     email: `
         <p class="section-label">NEWSLETTER</p>
         <div style="margin-top: 100px;">
-            <input type="email" placeholder="ENTER YOUR EMAIL" class="email-input">
+            <input type="email" placeholder="ENTER YOUR SPACE-MAIL" class="email-input">
+            <button class="btn-primary" style="margin-top:20px; border:none; cursor:pointer;">SUBSCRIBE</button>
         </div>`
 };
 
-// Function to handle page transitions
+// 2. FUNÇÃO DE NAVEGAÇÃO COM ANIMAÇÃO CÓSMICA
 function navigate(page) {
-    const contentArea = document.getElementById('content-area');
-    
-    // Smooth Fade-out
-    contentArea.style.opacity = '0';
-    
-    setTimeout(() => {
-        // Inject new HTML
-        contentArea.innerHTML = pageData[page] || "<h2>CONTENT NOT AVAILABLE</h2>";
-        
-        // Smooth Fade-in
-        contentArea.style.opacity = '1';
+    const area = document.getElementById('content-area');
+    const links = document.querySelectorAll('.uzi-link');
 
-        // Update active link styling
-        const links = document.querySelectorAll('.uzi-link');
+    if (!area) return;
+
+    // Efeito de Saída (Distorção Espacial)
+    area.style.transition = 'all 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
+    area.style.opacity = '0';
+    area.style.transform = 'scale(0.98) translateY(10px) blur(5px)';
+
+    setTimeout(() => {
+        // Troca o conteúdo
+        area.innerHTML = pageData[page] || "<h2>STARDUST NOT FOUND</h2>";
+        
+        // Efeito de Entrada (Expansão Cósmica)
+        area.style.opacity = '1';
+        area.style.transform = 'scale(1) translateY(0px) blur(0px)';
+
+        // Atualiza estilo do link ativo
         links.forEach(link => {
             link.classList.remove('active');
-            if (link.innerText.toLowerCase() === page) {
+            // Verifica se o texto do link corresponde à página
+            if (link.innerText.toLowerCase().trim() === page.toLowerCase()) {
                 link.classList.add('active');
             }
         });
-    }, 350);
+
+        // Ajuste para Celular: Sobe a tela para o início do conteúdo
+        if (window.innerWidth <= 1024) {
+            const sidebarHeight = document.querySelector('.sidebar').offsetHeight;
+            window.scrollTo({
+                top: sidebarHeight - 20,
+                behavior: 'smooth'
+            });
+        }
+    }, 400);
 }
 
-// Set default view to 'merch' on load
+// 3. CONTROLE DA SPLASH SCREEN (JANELA DE ENTRADA)
+function closeSplash() {
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+        splash.style.opacity = '0';
+        splash.style.pointerEvents = 'none';
+        setTimeout(() => {
+            splash.style.display = 'none';
+        }, 500);
+    }
+}
+
+// 4. INICIALIZAÇÃO DO SITE
 window.onload = () => {
+    // Garante que o site comece na loja
     navigate('merch');
-};
-
-const pageData = {
-    merch: `
-        <p style="font-weight: bold; letter-spacing: 2px;">OFFICIAL STORE</p>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="Roupasimg/voidhoodie.png" style="width:100%; background:#f7f7f7; padding:20px;">
-                <h3 style="font-size:12px; margin-top:10px;">VOID HOODIE</h3>
-                <p style="font-size:12px; color:#888;">$85.00</p>
-            </div>
-            </div>`
-};
-
-function navigate(page) {
-    const area = document.getElementById('content-area');
-    if (!area) return;
-
-    // Efeito de transição suave
-    area.style.opacity = '0';
     
-    setTimeout(() => {
-        area.innerHTML = pageData[page] || "<h2>COMING SOON</h2>";
-        area.style.opacity = '1';
-    }, 200);
-}
-
-// Isso faz os produtos aparecerem sozinhos assim que o site abre
-window.onload = () => navigate('merch');
+    // Adiciona o evento de fechar a splash se o botão existir
+    const enterBtn = document.querySelector('.btn-primary');
+    if (enterBtn && document.getElementById('splash-screen')) {
+        enterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSplash();
+        });
+    }
+};
