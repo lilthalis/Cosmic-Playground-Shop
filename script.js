@@ -1,47 +1,55 @@
-// 1. BANCO DE DADOS DO DROP (Cactus Jack Vibe)
-const pageData = {
-    shop: `
-        <div class="product-showcase">
-            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produto" class="hero-item" style="filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));">
-            
-            <p class="item-name">STARGAZER 1 X LIL THALIS</p>
-            
-            <div class="spin-logo-container">
-                <img src="Icon Cosmic/Cosmic.png" alt="Logo" class="spin-logo">
-            </div>
+// 1. O BANCO DE DADOS ESPACIAL (O que aparece em cada tela)
+const dimensionData = {
+    // A Tela Inicial (O Buraco Negro)
+    home: `
+        <div class="black-hole-container">
+            <div class="accretion-disk"></div>
+            <div class="black-hole"></div>
         </div>
+        <h1 class="astroworld-title">ASTROWORLD II</h1>
+        <p class="sub-title">ENTER THE EVENT HORIZON</p>
     `,
+    // A Tela de Merch
+    merch: `
+        <h1 class="astroworld-title" style="font-size: 2rem;">DROP 01: THE VOID</h1>
+        <p class="sub-title" style="margin-bottom: 40px;">UPLOADING ARTIFACTS...</p>
+        
+        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+             style="border-radius: 10px; filter: drop-shadow(0 0 20px rgba(139,92,246,0.3)); max-width: 300px; transition: transform 0.3s;"
+             onmouseover="this.style.transform='scale(1.05)'" 
+             onmouseout="this.style.transform='scale(1)'">
+             
+        <p class="sub-title" style="color: #fff; margin-top: 20px;">STARGAZER 1 - $120.00</p>
+    `,
+    // A Tela de Tour
     tour: `
-        <div class="product-showcase" style="height: 60vh; justify-content: center;">
-            <h2 style="font-family: 'Oswald', sans-serif; font-size: 4rem; letter-spacing: 10px; color: #fff; text-transform: uppercase; margin-bottom: 20px;">TOUR</h2>
-            <p style="color: #555; font-family: 'Inter', sans-serif; letter-spacing: 3px; font-weight: bold;">SYSTEM CALIBRATING... NO DATES YET.</p>
-        </div>
+        <h1 class="astroworld-title" style="font-size: 2.5rem; color: #fff;">NO DATES IN THIS DIMENSION</h1>
+        <p class="sub-title">SYSTEM STILL CALIBRATING...</p>
     `
 };
 
-// 2. FUNÇÃO DE NAVEGAÇÃO STEALTH
-function navigate(page) {
-    const area = document.getElementById('content-area');
+// 2. FUNÇÃO DE SALTO (WARP)
+function warpTo(dimension) {
+    const core = document.getElementById('astroworld-core');
 
-    if (!area) return;
+    if (!core) return;
 
-    // Efeito de Saída (Apaga a luz)
-    area.style.transition = 'all 0.3s ease-in-out';
-    area.style.opacity = '0';
-    area.style.transform = 'scale(0.98)';
+    // Efeito de saída (engolido pelo buraco negro)
+    core.style.opacity = '0';
+    core.style.transform = 'scale(0.9)';
 
+    // Espera a animação terminar para trocar o conteúdo
     setTimeout(() => {
-        // Troca o conteúdo
-        area.innerHTML = pageData[page] || "<h2 style='color: white; font-family: Oswald; letter-spacing: 5px;'>404 NOT FOUND</h2>";
+        core.innerHTML = dimensionData[dimension];
         
-        // Efeito de Entrada (Acende a luz)
-        area.style.opacity = '1';
-        area.style.transform = 'scale(1)';
-    }, 300);
+        // Efeito de entrada (surgindo do buraco negro)
+        core.style.opacity = '1';
+        core.style.transform = 'scale(1)';
+    }, 400); // 400 milissegundos de escuridão
 }
 
-// 3. INICIALIZAÇÃO
+// 3. IGNIÇÃO (O que roda quando o site abre)
 window.onload = () => {
-    // Garante que o site inicie sempre na loja (Single View)
-    navigate('shop');
+    // Começa sempre na tela do Buraco Negro
+    warpTo('home');
 };
