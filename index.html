@@ -3,52 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIL THALIS OFFICIAL | COSMIC PLAYGROUND</title>
-    
+    <title>LIL THALIS OFFICIAL | DROP 01</title>
     <link rel="icon" type="image/png" href="Icon Cosmic/Cosmic.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="splash-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050505; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 20px; letter-spacing: 5px; text-align: center; text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);">ENTER THE VOID</h1>
-        <p style="color: #8b5cf6; margin-bottom: 40px; font-family: 'Inter', sans-serif; letter-spacing: 3px; font-weight: 900;">LIL THALIS OFFICIAL</p>
-        <button id="enter-splash-btn" style="padding: 15px 40px; background: transparent; border: 2px solid #8b5cf6; color: #fff; font-family: 'Orbitron', sans-serif; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; letter-spacing: 2px;">INITIATE</button>
-    </div>
+    <nav class="stealth-nav">
+        <button class="nav-pill" onclick="navigate('tour')">TOUR</button>
+        <button class="nav-pill" onclick="navigate('shop')">SHOP</button>
+    </nav>
 
-    <main class="main-container">
-        <aside class="sidebar">
-            <div class="top-section">
-                <div class="saturn-container">
-                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZleHh6Z3R4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4bmV4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Uat6V6qEWFv90jG2pM/giphy.gif" class="saturn-icon" alt="Saturn">
-                </div>
-                
-                <nav>
-                    <ul class="nav-list">
-                        <li><a href="javascript:void(0)" onclick="navigate('music')" class="uzi-link">MUSIC</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('merch')" class="uzi-link">MERCH</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('tour')" class="uzi-link">TOUR</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('about')" class="uzi-link">ABOUT</a></li>
-                        <li><a href="javascript:void(0)" onclick="navigate('email')" class="uzi-link">EMAIL</a></li>
-                    </ul>
-                </nav>
+    <main class="center-stage" id="content-area">
+        <div class="product-showcase">
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produto" class="hero-item" style="filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));">
+            
+            <p class="item-name">STARGAZER 1 X LIL THALIS</p>
+            
+            <div class="spin-logo-container">
+                <img src="Icon Cosmic/Cosmic.png" alt="Logo" class="spin-logo">
             </div>
-
-            <footer class="sidebar-footer">
-                <div class="social-links" style="margin-bottom: 15px; display: flex; gap: 15px; font-family: 'Orbitron', sans-serif;">
-                    <a href="#" style="color: #aaa; text-decoration: none; transition: 0.3s;">FB</a> 
-                    <a href="#" style="color: #aaa; text-decoration: none; transition: 0.3s;">IG</a> 
-                    <a href="#" style="color: #aaa; text-decoration: none; transition: 0.3s;">YT</a> 
-                    <a href="#" style="color: #aaa; text-decoration: none; transition: 0.3s;">SC</a>
-                </div>
-                <p class="copyright" style="color: #ccc; font-size: 0.8rem; line-height: 1.5;">© 2026 LIL THALIS OFFICIAL<br>COSMIC PLAYGROUND RECORDS</p>
-            </footer>
-        </aside>
-
-        <section id="content-area" class="content-area"></section>
+        </div>
     </main>
 
     <script src="script.js"></script>
