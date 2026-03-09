@@ -1,3 +1,4 @@
+/* RESET BÁSICO */
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +6,18 @@
 }
 
 body {
-    font-family: 'Oswald', 'Inter', sans-serif;
-    background-color: #030303; /* O preto mais profundo possível */
+    background-color: #030303; /* Preto Absoluto */
     color: #ffffff;
+    font-family: 'Oswald', sans-serif;
     height: 100vh;
-    overflow: hidden; /* Trava a rolagem, a pessoa FICA no produto */
+    overflow: hidden; /* Trava a rolagem */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Os botões nos cantos superiores */
+/* NAVEGAÇÃO STEALTH */
 .stealth-nav {
     position: absolute;
     top: 0;
@@ -30,87 +32,101 @@ body {
 .nav-pill {
     background: transparent;
     color: #fff;
-    border: 1px solid #333; /* Borda bem sutil */
-    border-radius: 30px; /* Arredondado igual pílula */
-    padding: 8px 25px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .nav-pill:hover {
-    border-color: #fff;
-    background: #fff;
+    border-color: #8b5cf6;
+    background: #8b5cf6;
     color: #000;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    transform: translateY(-3px);
 }
 
-/* O Centro do Palco */
-.center-stage {
+/* O CENTRO DA GALÁXIA */
+.core-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    animation: fadeIn 2s ease-in;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.product-showcase {
-    text-align: center;
+/* --- O BURACO NEGRO (CSS PURO) --- */
+.black-hole-container {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
-/* A Imagem do Produto */
-.hero-item {
-    max-width: 450px; /* Tamanho grande pro centro da tela */
-    width: 100%;
-    margin-bottom: 20px;
-    transition: transform 0.5s ease;
-}
-
-.hero-item:hover {
-    transform: scale(1.05) translateY(-10px); /* Flutua de leve ao passar o mouse */
-}
-
-/* O Nome do Produto */
-.item-name {
-    font-size: 1rem;
-    letter-spacing: 4px;
-    color: #888;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
-
-/* A Logo Giratória em baixo */
-.spin-logo-container {
-    margin-top: 40px;
-}
-
-.spin-logo {
-    width: 60px;
-    height: 60px;
+.black-hole {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    /* Deixei em branco/preto pra manter o mistério */
-    filter: grayscale(1) invert(1); 
-    animation: spin 8s linear infinite;
+    background: #000;
+    /* O brilho ao redor do buraco negro */
+    box-shadow: 0 0 60px 10px rgba(139, 92, 246, 0.6), 
+                inset 0 0 20px rgba(0, 0, 0, 1);
+    animation: pulseGlow 4s ease-in-out infinite;
+    z-index: 2;
 }
 
-@keyframes spin {
+/* O anel de acreção (poeira estelar girando) */
+.accretion-disk {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 2px dashed rgba(139, 92, 246, 0.3);
+    animation: spinDisk 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 50px 5px rgba(139, 92, 246, 0.5), inset 0 0 20px rgba(0, 0, 0, 1); transform: scale(1); }
+    50% { box-shadow: 0 0 80px 20px rgba(139, 92, 246, 0.8), inset 0 0 20px rgba(0, 0, 0, 1); transform: scale(1.02); }
+}
+
+@keyframes spinDisk {
     100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+/* TEXTOS E TÍTULOS */
+.astroworld-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    margin-top: 20px;
 }
 
-/* Para Celulares */
-@media (max-width: 768px) {
-    .stealth-nav { padding: 20px; }
-    .hero-item { max-width: 300px; }
-    .nav-pill { padding: 6px 15px; font-size: 0.7rem; }
+.sub-title {
+    font-family: 'Oswald', sans-serif;
+    color: #666;
+    letter-spacing: 5px;
+    margin-top: 10px;
+}
+
+/* RODAPÉ */
+.abyss-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    color: #444;
+    letter-spacing: 4px;
 }
