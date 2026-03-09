@@ -6,8 +6,8 @@ const dimensionData = {
             <div class="accretion-disk"></div>
             <div class="black-hole"></div>
         </div>
-        <h1 class="astroworld-title">ASTROWORLD II</h1>
-        <p class="sub-title">ENTER THE EVENT HORIZON</p>
+        <h1 class="astroworld-title">CosmicPlayGround</h1>
+        <p class="sub-title">ENTER IN THIS FESTIVAL</p>
     `,
     // A Tela de Merch
     merch: `
