@@ -12,13 +12,15 @@ body {
     background-color: #ffffff; 
     color: #000000;
     overflow-x: hidden;
-    /* Adicionando um fundo estelar sutil para descaracterizar plágio */
-    background-image: radial-gradient(#8b5cf6 0.5px, transparent 0.5px);
+    /* Fundo estelar sutil (A Assinatura Cosmic) */
+    background-image: radial-gradient(#8b5cf6 1px, transparent 1px);
     background-size: 60px 60px;
 }
 
+/* --- ESTRUTURA PRINCIPAL --- */
 .main-container {
     display: flex;
+    width: 100%;
     min-height: 100vh;
 }
 
@@ -26,13 +28,15 @@ body {
 .sidebar {
     width: 350px;
     height: 100vh;
-    padding: 50px;
-    position: fixed; /* Fixo no PC */
+    position: fixed; /* Fixa no PC para não sumir no scroll */
+    left: 0;
+    top: 0;
+    padding: 50px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: white;
-    z-index: 100;
+    background: #ffffff;
+    z-index: 1000;
     border-right: 1px solid #f0f0f0;
 }
 
@@ -53,16 +57,16 @@ body {
     filter: grayscale(0.5) contrast(1.1);
 }
 
-/* 3. LINKS (ESTILO COSMIC) */
+/* 3. LINKS (ESTILO ASTRAL) */
 .nav-list {
     list-style: none;
 }
 
 .uzi-link {
-    font-family: 'Orbitron', sans-serif; /* Fonte futurista para evitar plágio */
-    font-size: 4.5rem; /* Ajustado para não quebrar tanto */
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 4.5rem; 
     font-weight: 900;
-    color: #e0e0e0; /* Cinza claro inicial */
+    color: #e0e0e0; 
     text-decoration: none;
     line-height: 0.9;
     display: block;
@@ -80,52 +84,70 @@ body {
 /* 4. ÁREA DE CONTEÚDO */
 .content-area {
     flex: 1;
-    margin-left: 350px; /* Margem apenas para PC */
-    padding: 80px;
+    margin-left: 350px; /* Abre espaço para o menu não tampar nada */
+    padding: 60px 80px;
+    width: calc(100% - 350px);
     transition: all 0.5s ease;
 }
 
-/* 5. GRADE DE PRODUTOS */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* 5. A GALÁXIA DO MERCH (GRAVIDADE ZERO) */
+.merch-galaxy {
+    display: flex;
     gap: 40px;
-    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
-.product-card {
+.merch-item {
+    width: 280px;
     text-align: left;
+    animation: levitate 5s ease-in-out infinite;
 }
 
-.product-card img {
+/* Delay para os itens não flutuarem como robôs sincronizados */
+.merch-item:nth-child(2) { animation-delay: 1.5s; }
+.merch-item:nth-child(3) { animation-delay: 3s; }
+
+.merch-item img {
     width: 100%;
     background-color: #fcfcfc;
     padding: 30px;
-    border-radius: 25px; /* Bordas arredondadas = menos plágio */
+    border-radius: 25px; 
     border: 1px solid #f0f0f0;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-.product-card:hover img {
-    transform: translateY(-10px);
+.merch-item:hover img {
     border-color: #8b5cf6;
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2);
+    transform: scale(1.05);
 }
 
-/* 6. RESPONSIVIDADE (CELULAR) */
+.product-info {
+    margin-top: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes levitate {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); } /* Flutua no ápice da batida */
+}
+
+/* 6. RESPONSIVIDADE (CELULAR / MOBILE DROP) */
 @media (max-width: 1024px) {
     .main-container {
-        flex-direction: column; /* Menu em cima, conteúdo embaixo */
+        flex-direction: column; 
     }
 
     .sidebar {
-        position: relative; /* Solta o menu no celular */
+        position: relative; /* Para de flutuar e libera o espaço */
         width: 100%;
         height: auto;
         padding: 40px 20px;
         text-align: center;
         border-right: none;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #eee;
     }
 
     .saturn-container {
@@ -134,69 +156,14 @@ body {
     }
 
     .content-area {
-        margin-left: 0; /* Remove a margem lateral no celular */
+        margin-left: 0; /* Remove o buraco na esquerda no celular */
+        width: 100%;
         padding: 40px 20px;
     }
 
     .uzi-link {
-        font-size: 2.8rem; /* Letras menores para caber na tela */
+        font-size: 3rem; /* Letras menores para caber na tela */
         text-align: center;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr; /* Um produto por linha no celular */
-    }
-}
-
-/* --- CORREÇÃO DE SOBREPOSIÇÃO (PC) --- */
-.main-container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.sidebar {
-    width: 350px;
-    height: 100vh;
-    position: fixed; /* Fixa no PC para não sumir no scroll */
-    left: 0;
-    top: 0;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #fff;
-    z-index: 1000;
-}
-
-.content-area {
-    flex: 1;
-    margin-left: 350px; /* ABRE ESPAÇO para o menu não tampar nada */
-    padding: 60px;
-    width: calc(100% - 350px);
-}
-
-/* --- CORREÇÃO PARA CELULAR (ONDE ESTÁ O BUG) --- */
-@media (max-width: 1024px) {
-    .main-container {
-        flex-direction: column; /* Coloca um embaixo do outro */
-    }
-
-    .sidebar {
-        position: relative; /* PARA DE FLUTUAR e libera o espaço */
-        width: 100%;
-        height: auto;
-        padding: 30px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .content-area {
-        margin-left: 0; /* REMOVE o buraco na esquerda no celular */
-        width: 100%;
-        padding: 40px 20px;
-    }
-
-    .uzi-link {
-        font-size: 3rem; /* Diminui a letra para não vazar da tela */
+        margin-bottom: 10px;
     }
 }
