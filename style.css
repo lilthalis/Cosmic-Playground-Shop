@@ -1,153 +1,110 @@
-const dimensionData = {
-    home: `
-        <div class="black-hole-container">
-            <div class="accretion-disk"></div>
-            <div class="black-hole"></div>
-        </div>
-        <h1 class="astroworld-title">COSMIC</h1>
-        <p class="sub-title">ENTER THE EVENT HORIZON</p>
-    `,
-    merch: `
-        <div class="page-header">
-            <button class="back-btn" onclick="warpTo('home')">← BACK TO VOID</button>
-            <h1 class="astroworld-title" style="font-size: 2rem;">COLLECTION 01</h1>
-        </div>
-        
-        <div class="shop-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400" alt="Sneaker">
-                <p>STARGAZER 1 - $120</p>
-                <span class="sold-out">SOLD OUT</span>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400" alt="Hoodie">
-                <p>VOID HOODIE - $85</p>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400" alt="Shirt">
-                <p>ORBIT TEE - $45</p>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400" alt="Cap">
-                <p>ASTRO CAP - $35</p>
-            </div>
-        </div>
-    `,
-    tour: `
-        <button class="back-btn" onclick="warpTo('home')">← BACK TO VOID</button>
-        <h1 class="astroworld-title" style="font-size: 2.5rem; margin-top: 40px;">WORLD TOUR</h1>
-        <p class="sub-title">NO DATES IN THIS DIMENSION YET.</p>
-    `
-};
-
-function warpTo(dimension) {
-    const core = document.getElementById('astroworld-core');
-    if (!core) return;
-
-    core.style.opacity = '0';
-    core.style.transform = 'scale(0.95)';
-
-    setTimeout(() => {
-        core.innerHTML = dimensionData[dimension];
-        core.style.opacity = '1';
-        core.style.transform = 'scale(1)';
-    }, 300);
+:root {
+    --accent: #8b5cf6; /* Roxo Galáctico */
+    --bg: #000000;
 }
 
-window.onload = () => warpTo('home');
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
 
-/* TÍTULO RESPONSIVO - NÃO CORTA MAIS */
-.astroworld-title {
-    font-family: 'Orbitron', sans-serif;
-    /* O clamp faz o tamanho variar entre 1.5rem e 3rem dependendo da tela */
-    font-size: clamp(1.5rem, 8vw, 3rem); 
-    letter-spacing: clamp(5px, 2vw, 15px);
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-    text-align: center;
-    margin-top: 20px;
-    padding: 0 10px;
+body {
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* CONTAINER DA LOJA */
-.shop-grid {
-    display: grid;
-    /* Cria colunas automáticas que se ajustam ao tamanho da tela */
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-    width: 95%;
-    max-width: 900px;
-    margin-top: 30px;
-    padding: 10px;
-    overflow-y: auto; /* Permite rolar a loja no celular */
-    max-height: 60vh;
+/* Efeito de Grão (Vibe Astroworld/Peep) */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://media.giphy.com/media/oEI9uWUicGuS4/giphy.gif');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 999;
 }
 
-.product-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid #222;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    transition: 0.3s;
-    position: relative;
-}
-
-.product-card:hover {
-    border-color: #8b5cf6;
-    background: rgba(139, 92, 246, 0.05);
-}
-
-.product-card img {
+/* Navegação Estilo Travis Scott */
+.cosmic-nav {
+    position: fixed;
+    top: 30px;
     width: 100%;
-    filter: grayscale(0.5);
-    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 100;
 }
 
-.product-card:hover img {
-    filter: grayscale(0);
-    transform: scale(1.02);
-}
-
-.product-card p {
-    font-size: 0.7rem;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    color: #aaa;
-}
-
-/* BOTÃO DE VOLTAR */
-.back-btn {
+.nav-item {
     background: none;
-    border: 1px solid #444;
-    color: #8b5cf6;
-    padding: 5px 15px;
-    border-radius: 20px;
+    border: none;
+    color: #555;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.6rem;
-    cursor: pointer;
-    margin-bottom: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
     transition: 0.3s;
 }
 
-.back-btn:hover {
-    background: #8b5cf6;
-    color: #000;
+.nav-item:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+/* Palco Central */
+#stage {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    transition: 0.5s ease;
 }
 
-.sold-out {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 0.5rem;
-    background: #C82A22;
-    padding: 2px 6px;
-    font-weight: bold;
+/* Buraco Negro Estilizado */
+.portal-core {
+    width: 280px;
+    height: 280px;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.4);
+    position: relative;
+    animation: floating 3s ease-in-out infinite;
 }
 
-/* AJUSTE PARA O BURACO NEGRO NO CELULAR */
-@media (max-width: 600px) {
-    .black-hole { width: 180px; height: 180px; }
-    .accretion-disk { width: 230px; height: 230px; }
-    .stealth-nav { padding: 20px; }
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
+
+/* Títulos Brutalistas */
+.big-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 10vw, 5rem);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 0.9;
+}
+
+/* Vitrine de Produtos (Grid Potente) */
+.drop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 100px 40px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.item-card {
+    border: 1px solid #111;
+    padding: 20px;
+    background: #050505;
+    transition: 0.4s;
+}
+
+.item-card:hover { border-color: var(--accent); transform: scale(1.02); }
+
+.item-card img { width: 100%; filter: grayscale(1); transition: 0.4s; }
+
+.item-card:hover img { filter: grayscale(0); }
+
+/* Scrollbar Escondida */
+::-webkit-scrollbar { width: 0; }
